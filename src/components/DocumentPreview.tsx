@@ -33,6 +33,10 @@ const DocumentPreview = ({ title, content, citations, style }: DocumentPreviewPr
           return formatChicago(citation);
         case "Harvard":
           return formatHarvard(citation);
+        case "Bluebook":
+          return formatBluebook(citation);
+        case "ALWD":
+          return formatALWD(citation);
         default:
           return formatAPA(citation);
       }
@@ -83,6 +87,30 @@ const DocumentPreview = ({ title, content, citations, style }: DocumentPreviewPr
     if (citation.issue) formatted += `, no. ${citation.issue}`;
     if (citation.pages) formatted += `, pp. ${citation.pages}`;
     if (citation.url) formatted += `, available at: ${citation.url}`;
+    return formatted;
+  };
+
+  const formatBluebook = (citation: Citation) => {
+    // Simplified for court cases: Case Name, Source page number (Court year)
+    // We'll use the 'title' for the case name and 'publication' for the source.
+    let formatted = `<em>${citation.title}</em>`;
+    if (citation.publication) formatted += `, ${citation.publication}`;
+    if (citation.pages) formatted += ` ${citation.pages}`;
+    if (citation.author && citation.year) {
+      formatted += ` (${citation.author} ${citation.year})`;
+    } else if (citation.year) {
+      formatted += ` (${citation.year})`;
+    }
+    return formatted;
+  };
+
+  const formatALWD = (citation: Citation) => {
+    // Case Name, Reporter, Court (Year)
+    // We'll use 'title' for case name, 'publication' for reporter, and 'author' for court.
+    let formatted = `<em>${citation.title}</em>`;
+    if (citation.publication) formatted += `, ${citation.publication}`;
+    if (citation.author) formatted += `, ${citation.author}`;
+    if (citation.year) formatted += ` (${citation.year})`;
     return formatted;
   };
 

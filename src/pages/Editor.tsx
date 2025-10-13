@@ -7,8 +7,10 @@ import { ArrowLeft, Save } from "lucide-react";
 import FileUpload from "@/components/FileUpload";
 import CitationPanel from "@/components/CitationPanel";
 import DocumentPreview from "@/components/DocumentPreview";
+import GradingPanel from "@/components/GradingPanel";
 import StyleSelector from "@/components/StyleSelector";
 import { Input } from "@/components/ui/input";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 interface Paper {
   id: string;
@@ -158,6 +160,44 @@ const Editor = () => {
     }
   };
 
+  const handleCitationsExtracted = async (citationsContent: string) => {
+    const extractedCitations = citationsContent
+      .split("\n")
+      .filter((line) => line.trim() !== "");
+
+    const newCitations = extractedCitations.map((citationText, index) => {
+      const parts = citationText.split(",").map((part) => part.trim());
+      return {
+        paper_id: paperId,
+        author: parts[0] || "Unknown Author",
+        title: parts[1] || "Untitled",
+        year: parts[2] ? parseInt(parts[2]) : null,
+        citation_order: citations.length + index,
+      };
+    });
+
+    if (newCitations.length > 0) {
+      const { data, error } = await supabase
+        .from("citations")
+        .insert(newCitations)
+        .select();
+
+      if (error) {
+        toast({
+          title: "Error importing citations",
+          description: error.message,
+          variant: "destructive",
+        });
+      } else if (data) {
+        setCitations([...citations, ...data]);
+        toast({
+          title: "Citations imported",
+          description: `${data.length} citations were extracted and added.`,
+        });
+      }
+    }
+  };
+
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -208,6 +248,7 @@ const Editor = () => {
             <FileUpload
               paperId={paper.id}
               onContentExtracted={handleContentChange}
+              onCitationsExtracted={handleCitationsExtracted}
             />
           </div>
           
@@ -220,23 +261,30 @@ const Editor = () => {
           </div>
         </div>
 
-        {/* Right Panel - Preview */}
+        {/* Right Panel - Preview & Grading */}
         <div className="w-1/2 flex flex-col bg-background">
-          <div className="p-4 border-b bg-card">
-            <h2 className="font-semibold">Formatted Preview</h2>
-            <p className="text-sm text-muted-foreground">
-              {paper.citation_style} style formatting
-            </p>
-          </div>
-          
-          <div className="flex-1 overflow-auto">
-            <DocumentPreview
-              title={title}
-              content={paper.content || ""}
-              citations={citations}
-              style={paper.citation_style}
-            />
-          </div>
+          <Tabs defaultValue="preview" className="flex-1 flex flex-col">
+            <div className="p-4 border-b bg-card">
+              <TabsList>
+                <TabsTrigger value="preview">Preview</TabsTrigger>
+                <TabsTrigger value="grading">Grading</TabsTrigger>
+              </TabsList>
+            </div>
+            <TabsContent value="preview" className="flex-1 overflow-auto">
+              <DocumentPreview
+                title={title}
+                content={paper.content || ""}
+                citations={citations}
+                style={paper.citation_style}
+              />
+            </TabsContent>
+            <TabsContent value="grading" className="flex-1 overflow-auto p-4">
+              <GradingPanel
+                content={paper.content || ""}
+                citations={citations}
+              />
+            </TabsContent>
+          </Tabs>
         </div>
       </div>
     </div>
