@@ -22,6 +22,8 @@ const StyleSelector = ({ value, onChange }: StyleSelectorProps) => {
         <SelectItem value="MLA">MLA Style</SelectItem>
         <SelectItem value="Chicago">Chicago Style</SelectItem>
         <SelectItem value="Harvard">Harvard Style</SelectItem>
+        <SelectItem value="Bluebook">Bluebook Style</SelectItem>
+        <SelectItem value="ALWD">ALWD Style</SelectItem>
       </SelectContent>
     </Select>
   );

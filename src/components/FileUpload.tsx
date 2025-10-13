@@ -3,16 +3,37 @@ import { Upload, File, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { processDocument } from "@/services/documentProcessor";
 
 interface FileUploadProps {
   paperId: string;
   onContentExtracted: (content: string) => void;
+  onCitationsExtracted: (citationsContent: string) => void;
 }
 
-const FileUpload = ({ paperId, onContentExtracted }: FileUploadProps) => {
+const validTypes = [
+  "application/pdf",
+  "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+  "text/plain",
+];
+
+const FileDropZone = ({
+  onFileSelect,
+  file,
+  clearFile,
+  uploading,
+  title,
+  description,
+}: {
+  onFileSelect: (file: File) => void;
+  file: File | null;
+  clearFile: () => void;
+  uploading: boolean;
+  title: string;
+  description: string;
+}) => {
   const [isDragging, setIsDragging] = useState(false);
-  const [uploadedFile, setUploadedFile] = useState<File | null>(null);
-  const [uploading, setUploading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const { toast } = useToast();
 
@@ -21,28 +42,17 @@ const FileUpload = ({ paperId, onContentExtracted }: FileUploadProps) => {
     setIsDragging(true);
   };
 
-  const handleDragLeave = () => {
-    setIsDragging(false);
-  };
+  const handleDragLeave = () => setIsDragging(false);
 
   const handleDrop = (e: React.DragEvent) => {
     e.preventDefault();
     setIsDragging(false);
-    
     const files = Array.from(e.dataTransfer.files);
-    if (files.length > 0) {
-      handleFileSelect(files[0]);
-    }
+    if (files.length > 0) handleFile(files[0]);
   };
 
-  const handleFileSelect = async (file: File) => {
-    const validTypes = [
-      "application/pdf",
-      "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-      "text/plain",
-    ];
-
-    if (!validTypes.includes(file.type)) {
+  const handleFile = (selectedFile: File) => {
+    if (!validTypes.includes(selectedFile.type)) {
       toast({
         title: "Invalid file type",
         description: "Please upload a PDF, DOCX, or TXT file",
@@ -50,73 +60,27 @@ const FileUpload = ({ paperId, onContentExtracted }: FileUploadProps) => {
       });
       return;
     }
-
-    setUploadedFile(file);
-    await processFile(file);
-  };
-
-  const processFile = async (file: File) => {
-    setUploading(true);
-    try {
-      // Read file content
-      const text = await file.text();
-      
-      // Update paper with content
-      const { error } = await supabase
-        .from("papers")
-        .update({
-          content: text,
-          file_name: file.name,
-          file_type: file.type,
-        })
-        .eq("id", paperId);
-
-      if (error) throw error;
-
-      onContentExtracted(text);
-      
-      toast({
-        title: "File uploaded",
-        description: "Your document has been processed",
-      });
-    } catch (error: any) {
-      toast({
-        title: "Error",
-        description: error.message || "Failed to process file",
-        variant: "destructive",
-      });
-    } finally {
-      setUploading(false);
-    }
-  };
-
-  const clearFile = () => {
-    setUploadedFile(null);
-    if (fileInputRef.current) {
-      fileInputRef.current.value = "";
-    }
+    onFileSelect(selectedFile);
   };
 
   return (
-    <div className="space-y-3">
+    <div className="space-y-2">
       <div
-        className={`
-          border-2 border-dashed rounded-lg p-6 text-center transition-colors
-          ${isDragging ? "border-primary bg-primary/5" : "border-border"}
-          ${uploadedFile ? "bg-secondary" : ""}
-        `}
+        className={`border-2 border-dashed rounded-lg p-4 text-center transition-colors ${
+          isDragging ? "border-primary bg-primary/5" : "border-border"
+        } ${file ? "bg-secondary" : ""}`}
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}
         onDrop={handleDrop}
       >
-        {uploadedFile ? (
+        {file ? (
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <File className="h-8 w-8 text-primary" />
+              <File className="h-6 w-6 text-primary" />
               <div className="text-left">
-                <p className="font-medium">{uploadedFile.name}</p>
-                <p className="text-sm text-muted-foreground">
-                  {(uploadedFile.size / 1024).toFixed(2)} KB
+                <p className="font-medium text-sm">{file.name}</p>
+                <p className="text-xs text-muted-foreground">
+                  {(file.size / 1024).toFixed(2)} KB
                 </p>
               </div>
             </div>
@@ -131,44 +95,150 @@ const FileUpload = ({ paperId, onContentExtracted }: FileUploadProps) => {
           </div>
         ) : (
           <>
-            <Upload className="h-10 w-10 text-muted-foreground mx-auto mb-3" />
-            <p className="text-sm font-medium mb-1">
-              Drop your file here, or click to browse
-            </p>
-            <p className="text-xs text-muted-foreground">
-              Supports PDF, DOCX, and TXT files
-            </p>
+            <Upload className="h-8 w-8 text-muted-foreground mx-auto mb-2" />
+            <p className="text-sm font-medium mb-1">{title}</p>
+            <p className="text-xs text-muted-foreground">{description}</p>
           </>
         )}
       </div>
-
       <input
         ref={fileInputRef}
         type="file"
-        accept=".pdf,.docx,.txt"
-        onChange={(e) => {
-          const file = e.target.files?.[0];
-          if (file) handleFileSelect(file);
-        }}
+        accept={validTypes.join(",")}
+        onChange={(e) => e.target.files && handleFile(e.target.files[0])}
         className="hidden"
       />
-
-      {!uploadedFile && (
+      {!file && (
         <Button
           variant="outline"
+          size="sm"
           className="w-full"
           onClick={() => fileInputRef.current?.click()}
         >
-          <Upload className="h-4 w-4 mr-2" />
           Select File
         </Button>
       )}
+    </div>
+  );
+};
 
-      {uploading && (
-        <div className="text-center text-sm text-muted-foreground">
-          Processing your document...
-        </div>
-      )}
+const FileUpload = ({
+  paperId,
+  onContentExtracted,
+  onCitationsExtracted,
+}: FileUploadProps) => {
+  const [uploadMode, setUploadMode] = useState<"single" | "split">("single");
+  const [mainFile, setMainFile] = useState<File | null>(null);
+  const [citationsFile, setCitationsFile] = useState<File | null>(null);
+  const [uploading, setUploading] = useState(false);
+  const { toast } = useToast();
+
+  const processFile = async (file: File, type: "content" | "citations") => {
+    const text = await file.text();
+    if (type === "content") {
+      onContentExtracted(text);
+      return supabase
+        .from("papers")
+        .update({ content: text, file_name: file.name, file_type: file.type })
+        .eq("id", paperId);
+    } else {
+      onCitationsExtracted(text);
+      // We might want a separate table for citation documents later
+      return supabase
+        .from("papers")
+        .update({ citations_file_name: file.name })
+        .eq("id", paperId);
+    }
+  };
+
+  const handleUpload = async () => {
+    setUploading(true);
+    try {
+      if (uploadMode === "single" && mainFile) {
+        const { content, citations } = await processDocument(mainFile);
+        onContentExtracted(content);
+        onCitationsExtracted(citations.join("\n"));
+
+        await supabase
+          .from("papers")
+          .update({
+            content,
+            file_name: mainFile.name,
+            file_type: mainFile.type,
+          })
+          .eq("id", paperId);
+      } else if (uploadMode === "split") {
+        if (mainFile) {
+          const { error } = await processFile(mainFile, "content");
+          if (error) throw error;
+        }
+        if (citationsFile) {
+          const { error } = await processFile(citationsFile, "citations");
+          if (error) throw error;
+        }
+      }
+      toast({
+        title: "Upload successful",
+        description: "Your document(s) have been processed.",
+      });
+    } catch (error: any) {
+      toast({
+        title: "Error",
+        description: error.message || "Failed to process files",
+        variant: "destructive",
+      });
+    } finally {
+      setUploading(false);
+    }
+  };
+
+  const canUpload =
+    (uploadMode === "single" && mainFile) ||
+    (uploadMode === "split" && (mainFile || citationsFile));
+
+  return (
+    <div className="space-y-4">
+      <Tabs
+        value={uploadMode}
+        onValueChange={(v) => setUploadMode(v as "single" | "split")}
+      >
+        <TabsList className="grid w-full grid-cols-2">
+          <TabsTrigger value="single">Single Document</TabsTrigger>
+          <TabsTrigger value="split">Split Upload</TabsTrigger>
+        </TabsList>
+        <TabsContent value="single" className="pt-2">
+          <FileDropZone
+            onFileSelect={setMainFile}
+            file={mainFile}
+            clearFile={() => setMainFile(null)}
+            uploading={uploading}
+            title="Upload Combined Document"
+            description="Paper and bibliography in one file"
+          />
+        </TabsContent>
+        <TabsContent value="split" className="pt-2 space-y-3">
+          <FileDropZone
+            onFileSelect={setMainFile}
+            file={mainFile}
+            clearFile={() => setMainFile(null)}
+            uploading={uploading}
+            title="Upload Main Paper"
+            description="The body of your work"
+          />
+          <FileDropZone
+            onFileSelect={setCitationsFile}
+            file={citationsFile}
+            clearFile={() => setCitationsFile(null)}
+            uploading={uploading}
+            title="Upload Bibliography"
+            description="Citations or references file"
+          />
+        </TabsContent>
+      </Tabs>
+
+      <Button onClick={handleUpload} disabled={!canUpload || uploading} className="w-full">
+        {uploading ? "Processing..." : "Upload & Process"}
+      </Button>
     </div>
   );
 };
