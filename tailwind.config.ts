@@ -57,6 +57,15 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        academic: {
+          blue: "hsl(var(--academic-blue))",
+          blueLight: "hsl(var(--academic-blue-light))",
+          amber: "hsl(var(--academic-amber))",
+        },
+      },
+      fontFamily: {
+        sans: ["Inter", "system-ui", "sans-serif"],
+        serif: ["Merriweather", "Georgia", "serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
