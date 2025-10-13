@@ -12,12 +12,6 @@ interface FileUploadProps {
   onCitationsExtracted: (citationsContent: string) => void;
 }
 
-const validTypes = [
-  "application/pdf",
-  "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-  "text/plain",
-];
-
 const FileDropZone = ({
   onFileSelect,
   file,
@@ -35,7 +29,6 @@ const FileDropZone = ({
 }) => {
   const [isDragging, setIsDragging] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const { toast } = useToast();
 
   const handleDragOver = (e: React.DragEvent) => {
     e.preventDefault();
@@ -52,14 +45,6 @@ const FileDropZone = ({
   };
 
   const handleFile = (selectedFile: File) => {
-    if (!validTypes.includes(selectedFile.type)) {
-      toast({
-        title: "Invalid file type",
-        description: "Please upload a PDF, DOCX, or TXT file",
-        variant: "destructive",
-      });
-      return;
-    }
     onFileSelect(selectedFile);
   };
 
@@ -104,7 +89,6 @@ const FileDropZone = ({
       <input
         ref={fileInputRef}
         type="file"
-        accept={validTypes.join(",")}
         onChange={(e) => e.target.files && handleFile(e.target.files[0])}
         className="hidden"
       />
