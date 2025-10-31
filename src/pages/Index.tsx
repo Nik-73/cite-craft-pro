@@ -1,194 +1,165 @@
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { supabase } from "@/integrations/supabase/client";
+import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { FileText, BookOpen, Zap, CheckCircle, ArrowRight } from "lucide-react";
+import { Download } from "lucide-react";
+import FileUpload from "@/components/FileUpload";
+import CitationPanel from "@/components/CitationPanel";
+import DocumentPreview from "@/components/DocumentPreview";
+import GradingPanel from "@/components/GradingPanel";
+import StyleSelector from "@/components/StyleSelector";
+import { Input } from "@/components/ui/input";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
+interface Citation {
+  id: string;
+  author: string;
+  title: string;
+  year: number | null;
+  publication: string | null;
+  url: string | null;
+  doi: string | null;
+  pages: string | null;
+  volume: string | null;
+  issue: string | null;
+  publisher: string | null;
+  citation_order: number;
+}
 
 const Index = () => {
-  const navigate = useNavigate();
+  const { toast } = useToast();
+  const [citations, setCitations] = useState<Citation[]>([]);
+  const [title, setTitle] = useState("Untitled Paper");
+  const [content, setContent] = useState("");
+  const [citationStyle, setCitationStyle] = useState("APA");
 
-  useEffect(() => {
-    // Check if user is already logged in
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      if (session) {
-        navigate("/app");
-      }
+  const handleContentChange = (newContent: string) => {
+    setContent(newContent);
+  };
+
+  const handleCitationsExtracted = (citationsContent: string) => {
+    const extractedCitations = citationsContent
+      .split("\n")
+      .filter((line) => line.trim() !== "");
+
+    const newCitations = extractedCitations.map((citationText, index) => {
+      const parts = citationText.split(",").map((part) => part.trim());
+      return {
+        id: `extracted-${Date.now()}-${index}`,
+        author: parts[0] || "Unknown Author",
+        title: parts[1] || "Untitled",
+        year: parts[2] ? parseInt(parts[2]) : null,
+        publication: null,
+        url: null,
+        doi: null,
+        pages: null,
+        volume: null,
+        issue: null,
+        publisher: null,
+        citation_order: citations.length + index,
+      };
     });
-  }, [navigate]);
 
-  const features = [
-    {
-      icon: FileText,
-      title: "Multiple Format Support",
-      description: "Upload DOCX, PDF, or TXT files and see them formatted professionally",
-    },
-    {
-      icon: BookOpen,
-      title: "4 Citation Styles",
-      description: "Instant formatting in APA, MLA, Chicago, or Harvard styles",
-    },
-    {
-      icon: Zap,
-      title: "Real-time Preview",
-      description: "See your formatted paper update as you add citations",
-    },
-  ];
+    if (newCitations.length > 0) {
+      setCitations([...citations, ...newCitations]);
+      toast({
+        title: "Citations imported",
+        description: `${newCitations.length} citations were extracted and added.`,
+      });
+    }
+  };
 
-  const benefits = [
-    "Automatic citation formatting",
-    "Bibliography generation",
-    "Footnote management",
-    "Professional document preview",
-    "Save multiple papers",
-    "Export to PDF & DOCX",
-  ];
+  const handleStyleChange = (style: string) => {
+    setCitationStyle(style);
+    toast({
+      title: "Style updated",
+      description: `Citation style changed to ${style}`,
+    });
+  };
+
+  const handleExport = () => {
+    toast({
+      title: "Export",
+      description: "Export functionality coming soon!",
+    });
+  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-academic-blueLight/10 to-secondary">
-      {/* Hero Section */}
-      <section className="container mx-auto px-4 pt-20 pb-16">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <FileText className="h-12 w-12 text-primary" />
-            <h1 className="text-5xl font-bold text-primary">AcademicFormat</h1>
-          </div>
-          
-          <h2 className="text-4xl md:text-5xl font-bold text-balance">
-            Format Your Research Papers <span className="text-primary">Professionally</span>
-          </h2>
-          
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-balance">
-            Stop worrying about citation formatting. Upload your paper, add sources, and instantly
-            see it formatted to academic standards in APA, MLA, Chicago, or Harvard style.
-          </p>
-
-          <div className="flex gap-4 justify-center pt-4">
-            <Button size="lg" onClick={() => navigate("/auth")} className="gap-2 text-lg px-8">
-              Get Started Free
-              <ArrowRight className="h-5 w-5" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              onClick={() => navigate("/auth")}
-              className="text-lg px-8"
-            >
-              Sign In
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="max-w-6xl mx-auto">
-          <h3 className="text-3xl font-bold text-center mb-12">
-            Everything You Need for Perfect Formatting
-          </h3>
-          
-          <div className="grid md:grid-cols-3 gap-6">
-            {features.map((feature, index) => (
-              <Card key={index} className="academic-shadow hover:shadow-lg transition-shadow">
-                <CardContent className="pt-6">
-                  <feature.icon className="h-12 w-12 text-primary mb-4" />
-                  <h4 className="text-xl font-semibold mb-2">{feature.title}</h4>
-                  <p className="text-muted-foreground">{feature.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="max-w-4xl mx-auto">
-          <Card className="bg-primary text-primary-foreground">
-            <CardContent className="py-12 px-8">
-              <h3 className="text-3xl font-bold mb-8 text-center">
-                Perfect for Students & Researchers
-              </h3>
-              
-              <div className="grid md:grid-cols-2 gap-6">
-                {benefits.map((benefit, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <CheckCircle className="h-6 w-6 flex-shrink-0" />
-                    <span className="text-lg">{benefit}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="text-center mt-10">
-                <Button
-                  size="lg"
-                  variant="secondary"
-                  onClick={() => navigate("/auth")}
-                  className="gap-2 text-lg px-8"
-                >
-                  Start Formatting Now
-                  <ArrowRight className="h-5 w-5" />
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="max-w-4xl mx-auto text-center space-y-12">
-          <h3 className="text-3xl font-bold">How It Works</h3>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="space-y-3">
-              <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold mx-auto">
-                1
-              </div>
-              <h4 className="text-xl font-semibold">Upload Your Paper</h4>
-              <p className="text-muted-foreground">
-                Drop in your DOCX, PDF, or TXT file
-              </p>
+    <div className="h-screen flex flex-col bg-background">
+      {/* Header */}
+      <header className="border-b bg-card px-4 py-3 flex items-center justify-between gap-4">
+        <div className="flex items-center gap-4 flex-1 min-w-0">
+          <div className="flex items-center gap-2">
+            <div className="h-8 w-8 rounded bg-primary flex items-center justify-center text-primary-foreground font-bold">
+              CC
             </div>
+            <h1 className="text-xl font-bold text-primary">CiteCraft Pro</h1>
+          </div>
+          <Input
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            className="max-w-md font-semibold"
+            placeholder="Paper Title"
+          />
+        </div>
 
-            <div className="space-y-3">
-              <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold mx-auto">
-                2
-              </div>
-              <h4 className="text-xl font-semibold">Add Your Sources</h4>
-              <p className="text-muted-foreground">
-                Input citations and choose your style
-              </p>
-            </div>
+        <div className="flex items-center gap-2">
+          <StyleSelector
+            value={citationStyle}
+            onChange={handleStyleChange}
+          />
+          <Button onClick={handleExport} variant="outline" className="gap-2">
+            <Download className="h-4 w-4" />
+            Export
+          </Button>
+        </div>
+      </header>
 
-            <div className="space-y-3">
-              <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold mx-auto">
-                3
-              </div>
-              <h4 className="text-xl font-semibold">Export Perfect Paper</h4>
-              <p className="text-muted-foreground">
-                Download formatted PDF or DOCX
-              </p>
-            </div>
+      {/* Main Content - Split Screen */}
+      <div className="flex-1 flex overflow-hidden">
+        {/* Left Panel - Editor & Upload */}
+        <div className="w-1/2 flex flex-col border-r bg-muted/20">
+          <div className="p-4 border-b bg-card">
+            <h2 className="font-semibold mb-2">Upload & Edit</h2>
+            <FileUpload
+              onContentExtracted={handleContentChange}
+              onCitationsExtracted={handleCitationsExtracted}
+            />
           </div>
 
-          <div className="pt-8">
-            <Button size="lg" onClick={() => navigate("/auth")} className="gap-2">
-              Try It Free Now
-              <ArrowRight className="h-5 w-5" />
-            </Button>
+          <div className="flex-1 overflow-auto p-4">
+            <CitationPanel
+              citations={citations}
+              onCitationsChange={setCitations}
+            />
           </div>
         </div>
-      </section>
 
-      {/* Footer */}
-      <footer className="border-t mt-20">
-        <div className="container mx-auto px-4 py-8">
-          <div className="text-center text-sm text-muted-foreground">
-            <p>© 2024 AcademicFormat. Professional research paper formatting made simple.</p>
-          </div>
+        {/* Right Panel - Preview & Grading */}
+        <div className="w-1/2 flex flex-col bg-background">
+          <Tabs defaultValue="preview" className="flex-1 flex flex-col">
+            <div className="p-4 border-b bg-card">
+              <TabsList>
+                <TabsTrigger value="preview">Preview</TabsTrigger>
+                <TabsTrigger value="grading">Grading</TabsTrigger>
+              </TabsList>
+            </div>
+            <TabsContent value="preview" className="flex-1 overflow-auto">
+              <DocumentPreview
+                title={title}
+                content={content}
+                citations={citations}
+                style={citationStyle}
+              />
+            </TabsContent>
+            <TabsContent value="grading" className="flex-1 overflow-auto p-4">
+              <GradingPanel
+                content={content}
+                citations={citations}
+              />
+            </TabsContent>
+          </Tabs>
         </div>
-      </footer>
+      </div>
     </div>
   );
 };

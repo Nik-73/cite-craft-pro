@@ -5,7 +5,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
 
 interface Citation {
   id: string;
@@ -23,12 +22,11 @@ interface Citation {
 }
 
 interface CitationPanelProps {
-  paperId: string;
   citations: Citation[];
   onCitationsChange: (citations: Citation[]) => void;
 }
 
-const CitationPanel = ({ paperId, citations, onCitationsChange }: CitationPanelProps) => {
+const CitationPanel = ({ citations, onCitationsChange }: CitationPanelProps) => {
   const [showForm, setShowForm] = useState(false);
   const [author, setAuthor] = useState("");
   const [title, setTitle] = useState("");
@@ -37,7 +35,7 @@ const CitationPanel = ({ paperId, citations, onCitationsChange }: CitationPanelP
   const [url, setUrl] = useState("");
   const { toast } = useToast();
 
-  const handleAddCitation = async (e: React.FormEvent) => {
+  const handleAddCitation = (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!author || !title) {
@@ -49,70 +47,44 @@ const CitationPanel = ({ paperId, citations, onCitationsChange }: CitationPanelP
       return;
     }
 
-    try {
-      const { data, error } = await supabase
-        .from("citations")
-        .insert([
-          {
-            paper_id: paperId,
-            author,
-            title,
-            year: year ? parseInt(year) : null,
-            publication,
-            url,
-            citation_order: citations.length,
-          },
-        ])
-        .select()
-        .single();
+    const newCitation: Citation = {
+      id: Date.now().toString(), // Simple ID generation for local state
+      author,
+      title,
+      year: year ? parseInt(year) : null,
+      publication,
+      url,
+      doi: null,
+      pages: null,
+      volume: null,
+      issue: null,
+      publisher: null,
+      citation_order: citations.length,
+    };
 
-      if (error) throw error;
+    onCitationsChange([...citations, newCitation]);
 
-      onCitationsChange([...citations, data]);
-      
-      // Reset form
-      setAuthor("");
-      setTitle("");
-      setYear("");
-      setPublication("");
-      setUrl("");
-      setShowForm(false);
+    // Reset form
+    setAuthor("");
+    setTitle("");
+    setYear("");
+    setPublication("");
+    setUrl("");
+    setShowForm(false);
 
-      toast({
-        title: "Citation added",
-        description: "Your citation has been added to the bibliography",
-      });
-    } catch (error: any) {
-      toast({
-        title: "Error",
-        description: error.message || "Failed to add citation",
-        variant: "destructive",
-      });
-    }
+    toast({
+      title: "Citation added",
+      description: "Your citation has been added to the bibliography",
+    });
   };
 
-  const handleDeleteCitation = async (id: string) => {
-    try {
-      const { error } = await supabase
-        .from("citations")
-        .delete()
-        .eq("id", id);
+  const handleDeleteCitation = (id: string) => {
+    onCitationsChange(citations.filter((c) => c.id !== id));
 
-      if (error) throw error;
-
-      onCitationsChange(citations.filter((c) => c.id !== id));
-      
-      toast({
-        title: "Citation deleted",
-        description: "Citation removed from bibliography",
-      });
-    } catch (error: any) {
-      toast({
-        title: "Error",
-        description: error.message || "Failed to delete citation",
-        variant: "destructive",
-      });
-    }
+    toast({
+      title: "Citation deleted",
+      description: "Citation removed from bibliography",
+    });
   };
 
   return (

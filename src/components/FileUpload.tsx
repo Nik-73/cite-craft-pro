@@ -2,12 +2,10 @@ import { useState, useRef } from "react";
 import { Upload, File, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { processDocument } from "@/services/documentProcessor";
 
 interface FileUploadProps {
-  paperId: string;
   onContentExtracted: (content: string) => void;
   onCitationsExtracted: (citationsContent: string) => void;
 }
@@ -107,7 +105,6 @@ const FileDropZone = ({
 };
 
 const FileUpload = ({
-  paperId,
   onContentExtracted,
   onCitationsExtracted,
 }: FileUploadProps) => {
@@ -121,17 +118,8 @@ const FileUpload = ({
     const text = await file.text();
     if (type === "content") {
       onContentExtracted(text);
-      return supabase
-        .from("papers")
-        .update({ content: text, file_name: file.name, file_type: file.type })
-        .eq("id", paperId);
     } else {
       onCitationsExtracted(text);
-      // We might want a separate table for citation documents later
-      return supabase
-        .from("papers")
-        .update({ citations_file_name: file.name })
-        .eq("id", paperId);
     }
   };
 
@@ -142,23 +130,12 @@ const FileUpload = ({
         const { content, citations } = await processDocument(mainFile);
         onContentExtracted(content);
         onCitationsExtracted(citations.join("\n"));
-
-        await supabase
-          .from("papers")
-          .update({
-            content,
-            file_name: mainFile.name,
-            file_type: mainFile.type,
-          })
-          .eq("id", paperId);
       } else if (uploadMode === "split") {
         if (mainFile) {
-          const { error } = await processFile(mainFile, "content");
-          if (error) throw error;
+          await processFile(mainFile, "content");
         }
         if (citationsFile) {
-          const { error } = await processFile(citationsFile, "citations");
-          if (error) throw error;
+          await processFile(citationsFile, "citations");
         }
       }
       toast({
