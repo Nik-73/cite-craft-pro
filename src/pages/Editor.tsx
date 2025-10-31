@@ -3,7 +3,13 @@ import { useParams, useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Save } from "lucide-react";
+import { ArrowLeft, Save, Download } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import FileUpload from "@/components/FileUpload";
 import CitationPanel from "@/components/CitationPanel";
 import DocumentPreview from "@/components/DocumentPreview";
@@ -11,6 +17,7 @@ import GradingPanel from "@/components/GradingPanel";
 import StyleSelector from "@/components/StyleSelector";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { exportToPDF, exportToDOCX } from "@/services/exportService";
 
 interface Paper {
   id: string;
@@ -100,7 +107,7 @@ const Editor = () => {
 
   const handleSave = async () => {
     if (!paper) return;
-    
+
     setSaving(true);
     try {
       const { error } = await supabase
@@ -109,6 +116,7 @@ const Editor = () => {
           title,
           content: paper.content,
           citation_style: paper.citation_style,
+          updated_at: new Date().toISOString(),
         })
         .eq("id", paper.id);
 
@@ -198,6 +206,52 @@ const Editor = () => {
     }
   };
 
+  const handleExportPDF = async () => {
+    if (!paper) return;
+
+    try {
+      await exportToPDF({
+        title,
+        content: paper.content || "",
+        citations,
+        style: paper.citation_style,
+      });
+      toast({
+        title: "PDF exported",
+        description: "Your research paper has been downloaded as PDF.",
+      });
+    } catch (error: any) {
+      toast({
+        title: "Export failed",
+        description: error.message || "Failed to export PDF",
+        variant: "destructive",
+      });
+    }
+  };
+
+  const handleExportDOCX = async () => {
+    if (!paper) return;
+
+    try {
+      await exportToDOCX({
+        title,
+        content: paper.content || "",
+        citations,
+        style: paper.citation_style,
+      });
+      toast({
+        title: "DOCX exported",
+        description: "Your research paper has been downloaded as DOCX.",
+      });
+    } catch (error: any) {
+      toast({
+        title: "Export failed",
+        description: error.message || "Failed to export DOCX",
+        variant: "destructive",
+      });
+    }
+  };
+
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -232,6 +286,22 @@ const Editor = () => {
             value={paper.citation_style}
             onChange={handleStyleChange}
           />
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline" className="gap-2">
+                <Download className="h-4 w-4" />
+                Export
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem onClick={handleExportPDF}>
+                Export as PDF
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={handleExportDOCX}>
+                Export as DOCX
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
           <Button onClick={handleSave} disabled={saving} className="gap-2">
             <Save className="h-4 w-4" />
             {saving ? "Saving..." : "Save"}
