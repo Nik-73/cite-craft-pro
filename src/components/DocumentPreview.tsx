@@ -136,10 +136,19 @@ const DocumentPreview = ({ title, content, citations, style }: DocumentPreviewPr
       </div>
 
       {/* Content */}
-      <div className="mb-12 space-y-4">
+      <div className="mb-12">
         {content ? (
-          <div className="whitespace-pre-wrap leading-relaxed text-justify">
-            {content}
+          <div className="prose prose-sm max-w-none">
+            {content.split('\n\n').map((paragraph, index) => {
+              const trimmed = paragraph.trim();
+              if (!trimmed) return null;
+
+              return (
+                <p key={index} className="mb-4 leading-relaxed text-justify indent-8">
+                  {trimmed}
+                </p>
+              );
+            })}
           </div>
         ) : (
           <div className="text-center text-muted-foreground py-12 border-2 border-dashed border-border rounded-lg">
