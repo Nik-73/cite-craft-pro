@@ -127,11 +127,8 @@ const FileUpload = ({
         .eq("id", paperId);
     } else {
       onCitationsExtracted(text);
-      // We might want a separate table for citation documents later
-      return supabase
-        .from("papers")
-        .update({ citations_file_name: file.name })
-        .eq("id", paperId);
+      // Just process the citations content, no need to store filename
+      return { data: null, error: null };
     }
   };
 
@@ -143,7 +140,7 @@ const FileUpload = ({
         onContentExtracted(content);
         onCitationsExtracted(citations.join("\n"));
 
-        await supabase
+        const { error } = await supabase
           .from("papers")
           .update({
             content,
@@ -151,14 +148,16 @@ const FileUpload = ({
             file_type: mainFile.type,
           })
           .eq("id", paperId);
+
+        if (error) throw error;
       } else if (uploadMode === "split") {
         if (mainFile) {
-          const { error } = await processFile(mainFile, "content");
-          if (error) throw error;
+          const result = await processFile(mainFile, "content");
+          if (result.error) throw result.error;
         }
         if (citationsFile) {
-          const { error } = await processFile(citationsFile, "citations");
-          if (error) throw error;
+          const result = await processFile(citationsFile, "citations");
+          if (result.error) throw result.error;
         }
       }
       toast({

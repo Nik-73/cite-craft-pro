@@ -21,6 +21,14 @@ interface DocumentPreviewProps {
   style: string;
 }
 
+// Utility function to escape HTML and prevent XSS
+const escapeHtml = (text: string | null): string => {
+  if (!text) return "";
+  const div = document.createElement("div");
+  div.textContent = text;
+  return div.innerHTML;
+};
+
 const DocumentPreview = ({ title, content, citations, style }: DocumentPreviewProps) => {
   const formattedCitations = useMemo(() => {
     return citations.map((citation, index) => {
@@ -44,60 +52,60 @@ const DocumentPreview = ({ title, content, citations, style }: DocumentPreviewPr
   }, [citations, style]);
 
   const formatAPA = (citation: Citation) => {
-    let formatted = `${citation.author}`;
+    let formatted = escapeHtml(citation.author);
     if (citation.year) formatted += ` (${citation.year})`;
-    formatted += `. ${citation.title}`;
-    if (citation.publication) formatted += `. <em>${citation.publication}</em>`;
-    if (citation.volume) formatted += `, ${citation.volume}`;
-    if (citation.issue) formatted += `(${citation.issue})`;
-    if (citation.pages) formatted += `, ${citation.pages}`;
-    if (citation.doi) formatted += `. https://doi.org/${citation.doi}`;
-    else if (citation.url) formatted += `. ${citation.url}`;
+    formatted += `. ${escapeHtml(citation.title)}`;
+    if (citation.publication) formatted += `. <em>${escapeHtml(citation.publication)}</em>`;
+    if (citation.volume) formatted += `, ${escapeHtml(citation.volume)}`;
+    if (citation.issue) formatted += `(${escapeHtml(citation.issue)})`;
+    if (citation.pages) formatted += `, ${escapeHtml(citation.pages)}`;
+    if (citation.doi) formatted += `. https://doi.org/${escapeHtml(citation.doi)}`;
+    else if (citation.url) formatted += `. ${escapeHtml(citation.url)}`;
     return formatted;
   };
 
   const formatMLA = (citation: Citation) => {
-    let formatted = `${citation.author}. "${citation.title}."`;
-    if (citation.publication) formatted += ` <em>${citation.publication}</em>`;
-    if (citation.volume) formatted += `, vol. ${citation.volume}`;
-    if (citation.issue) formatted += `, no. ${citation.issue}`;
+    let formatted = `${escapeHtml(citation.author)}. "${escapeHtml(citation.title)}."`;
+    if (citation.publication) formatted += ` <em>${escapeHtml(citation.publication)}</em>`;
+    if (citation.volume) formatted += `, vol. ${escapeHtml(citation.volume)}`;
+    if (citation.issue) formatted += `, no. ${escapeHtml(citation.issue)}`;
     if (citation.year) formatted += `, ${citation.year}`;
-    if (citation.pages) formatted += `, pp. ${citation.pages}`;
-    if (citation.url) formatted += `. ${citation.url}`;
+    if (citation.pages) formatted += `, pp. ${escapeHtml(citation.pages)}`;
+    if (citation.url) formatted += `. ${escapeHtml(citation.url)}`;
     return formatted;
   };
 
   const formatChicago = (citation: Citation) => {
-    let formatted = `${citation.author}. "${citation.title}."`;
-    if (citation.publication) formatted += ` <em>${citation.publication}</em>`;
-    if (citation.volume) formatted += ` ${citation.volume}`;
-    if (citation.issue) formatted += `, no. ${citation.issue}`;
+    let formatted = `${escapeHtml(citation.author)}. "${escapeHtml(citation.title)}."`;
+    if (citation.publication) formatted += ` <em>${escapeHtml(citation.publication)}</em>`;
+    if (citation.volume) formatted += ` ${escapeHtml(citation.volume)}`;
+    if (citation.issue) formatted += `, no. ${escapeHtml(citation.issue)}`;
     if (citation.year) formatted += ` (${citation.year})`;
-    if (citation.pages) formatted += `: ${citation.pages}`;
-    if (citation.doi) formatted += `. https://doi.org/${citation.doi}`;
+    if (citation.pages) formatted += `: ${escapeHtml(citation.pages)}`;
+    if (citation.doi) formatted += `. https://doi.org/${escapeHtml(citation.doi)}`;
     return formatted;
   };
 
   const formatHarvard = (citation: Citation) => {
-    let formatted = `${citation.author}`;
+    let formatted = escapeHtml(citation.author);
     if (citation.year) formatted += ` ${citation.year}`;
-    formatted += `, '${citation.title}'`;
-    if (citation.publication) formatted += `, <em>${citation.publication}</em>`;
-    if (citation.volume) formatted += `, vol. ${citation.volume}`;
-    if (citation.issue) formatted += `, no. ${citation.issue}`;
-    if (citation.pages) formatted += `, pp. ${citation.pages}`;
-    if (citation.url) formatted += `, available at: ${citation.url}`;
+    formatted += `, '${escapeHtml(citation.title)}'`;
+    if (citation.publication) formatted += `, <em>${escapeHtml(citation.publication)}</em>`;
+    if (citation.volume) formatted += `, vol. ${escapeHtml(citation.volume)}`;
+    if (citation.issue) formatted += `, no. ${escapeHtml(citation.issue)}`;
+    if (citation.pages) formatted += `, pp. ${escapeHtml(citation.pages)}`;
+    if (citation.url) formatted += `, available at: ${escapeHtml(citation.url)}`;
     return formatted;
   };
 
   const formatBluebook = (citation: Citation) => {
     // Simplified for court cases: Case Name, Source page number (Court year)
     // We'll use the 'title' for the case name and 'publication' for the source.
-    let formatted = `<em>${citation.title}</em>`;
-    if (citation.publication) formatted += `, ${citation.publication}`;
-    if (citation.pages) formatted += ` ${citation.pages}`;
+    let formatted = `<em>${escapeHtml(citation.title)}</em>`;
+    if (citation.publication) formatted += `, ${escapeHtml(citation.publication)}`;
+    if (citation.pages) formatted += ` ${escapeHtml(citation.pages)}`;
     if (citation.author && citation.year) {
-      formatted += ` (${citation.author} ${citation.year})`;
+      formatted += ` (${escapeHtml(citation.author)} ${citation.year})`;
     } else if (citation.year) {
       formatted += ` (${citation.year})`;
     }
@@ -107,9 +115,9 @@ const DocumentPreview = ({ title, content, citations, style }: DocumentPreviewPr
   const formatALWD = (citation: Citation) => {
     // Case Name, Reporter, Court (Year)
     // We'll use 'title' for case name, 'publication' for reporter, and 'author' for court.
-    let formatted = `<em>${citation.title}</em>`;
-    if (citation.publication) formatted += `, ${citation.publication}`;
-    if (citation.author) formatted += `, ${citation.author}`;
+    let formatted = `<em>${escapeHtml(citation.title)}</em>`;
+    if (citation.publication) formatted += `, ${escapeHtml(citation.publication)}`;
+    if (citation.author) formatted += `, ${escapeHtml(citation.author)}`;
     if (citation.year) formatted += ` (${citation.year})`;
     return formatted;
   };
