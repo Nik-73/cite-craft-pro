@@ -112,14 +112,16 @@ def process_inline_formatting(paragraph, text):
                     run = paragraph.add_run(content)
                     run.italic = True
                 else:
-                    # Handle citations [Source X]
-                    citation_parts = re.split(r'(\[Source \d+\])', ipart)
+                    # Handle superscript citations (^123)
+                    citation_parts = re.split(r'(\^\d+)', ipart)
                     for cpart in citation_parts:
                         if not cpart:
                             continue
 
-                        if cpart.startswith('[Source '):
-                            run = paragraph.add_run(cpart)
+                        if cpart.startswith('^'):
+                            # Superscript citation
+                            num = cpart[1:]
+                            run = paragraph.add_run(num)
                             run.font.superscript = True
                         else:
                             paragraph.add_run(cpart)
@@ -200,9 +202,9 @@ def convert_markdown_to_docx(md_file, citations_file, output_file):
         if not line or line.startswith('#'):
             continue
 
-        # Check if it's a source heading
-        if line.startswith('**[Source'):
-            # Extract source and add as hanging indent
+        # Check if it's a numbered citation (e.g., **1.**)
+        if line.startswith('**') and '.' in line[:10]:
+            # Extract citation and add as hanging indent
             p = doc.add_paragraph(style='Normal')
             p.paragraph_format.left_indent = Inches(0.5)
             p.paragraph_format.first_line_indent = Inches(-0.5)
@@ -212,9 +214,6 @@ def convert_markdown_to_docx(md_file, citations_file, output_file):
             # Section heading in citations
             p = doc.add_paragraph(style='Heading 2')
             process_inline_formatting(p, line)
-        elif line.startswith('##'):
-            # Skip markdown headers
-            continue
         elif line.startswith('---'):
             # Horizontal rule
             doc.add_paragraph('_' * 50)

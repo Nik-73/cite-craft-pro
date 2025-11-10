@@ -9,8 +9,9 @@ from weasyprint.text.fonts import FontConfiguration
 import re
 
 def process_citations(text):
-    """Convert [Source X] markers to proper footnote format"""
-    # This will keep the [Source X] format visible in the text
+    """Convert ^X markers to proper superscript format"""
+    # Replace ^123 with <sup>123</sup> HTML
+    text = re.sub(r'\^(\d+)', r'<sup>\1</sup>', text)
     return text
 
 def create_html_from_markdown(md_file, citations_file):
@@ -23,6 +24,10 @@ def create_html_from_markdown(md_file, citations_file):
     # Read citations
     with open(citations_file, 'r', encoding='utf-8') as f:
         citations_content = f.read()
+
+    # Process superscript citations before markdown conversion
+    md_content = process_citations(md_content)
+    citations_content = process_citations(citations_content)
 
     # Convert markdown to HTML
     md_converter = markdown.Markdown(extensions=['extra', 'nl2br', 'sane_lists'])
@@ -100,6 +105,14 @@ def create_html_from_markdown(md_file, citations_file):
 
         p:first-of-type, h2 + p, h3 + p, h4 + p {{
             text-indent: 0;
+        }}
+
+        sup {{
+            font-size: 9pt;
+            line-height: 0;
+            position: relative;
+            vertical-align: baseline;
+            top: -0.5em;
         }}
 
         ul, ol {{
