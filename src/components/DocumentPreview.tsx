@@ -158,8 +158,10 @@ const DocumentPreview = ({ title, content, citations, style }: DocumentPreviewPr
               <div
                 key={index}
                 className="pl-8 -indent-8 text-sm leading-relaxed"
-                dangerouslySetInnerHTML={{ __html: formatted }}
-              />
+              >
+                <span className="font-bold">[{index + 1}]</span>{" "}
+                <span dangerouslySetInnerHTML={{ __html: formatted }} />
+              </div>
             ))}
           </div>
         </div>
