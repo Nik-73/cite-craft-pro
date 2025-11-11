@@ -1,0 +1,37 @@
+{
+  "total_cases": 0,
+  "provisions_analysis": {
+    "most_common_ipc_sections": [],
+    "other_acts_invoked": [],
+    "total_unique_provisions": 0
+  },
+  "prosecution_arguments": {
+    "total_prosecution_arguments": 0,
+    "common_themes": [],
+    "sample_arguments": []
+  },
+  "defense_arguments": {
+    "total_defense_arguments": 0,
+    "common_themes": [],
+    "sample_arguments": []
+  },
+  "temporal_analysis": {
+    "average_duration_years": 0,
+    "duration_samples": 0,
+    "year_distribution": {},
+    "min_duration": 0,
+    "max_duration": 0
+  },
+  "court_distribution": {
+    "court_distribution": {},
+    "percentage": {}
+  },
+  "common_acquittal_grounds": {
+    "common_grounds": [],
+    "percentage_distribution": {}
+  },
+  "keyword_frequency": {
+    "keyword_frequency": {},
+    "percentage": {}
+  }
+}
