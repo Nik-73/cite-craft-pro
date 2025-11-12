@@ -128,7 +128,6 @@ Despite these limitations, this research represents the most comprehensive empir
 
 ---
 
-*[Word Count: Section 1 - 2,347 words]*
 
 ---
 
@@ -280,7 +279,6 @@ This comprehensive literature review establishes that while robust international
 
 ---
 
-*[Word Count: Section 2 - 2,989 words]*
 
 ---
 
@@ -486,7 +484,6 @@ Stage 5 (Supreme Court): Supreme Court resolution averages 24-36 months for admi
 
 ---
 
-*[Word Count: Section 3 - 2,497 words]*
 
 ---
 
@@ -698,7 +695,6 @@ Independent samples t-tests compared mean resolution times and recovery rates be
 
 ---
 
-*[Word Count: Section 4 - 897 words]*
 
 ---
 
@@ -770,7 +766,6 @@ Chi-square analysis examining compliance quality (categorized as high/medium/low
 
 ---
 
-*[Word Count: Section 5 - 1,547 words]*
 
 ---
 
@@ -808,7 +803,6 @@ This research advances transaction cost economics, behavioral compliance theory,
 
 ---
 
-*[Word Count: Section 6 - 923 words]*
 
 ---
 
@@ -834,7 +828,6 @@ Based on empirical findings and theoretical insights, the following evidence-bas
 
 ---
 
-*[Word Count: Section 7 - 622 words]*
 
 ---
 
@@ -856,7 +849,6 @@ Future research priorities include: (1) comparative state-level analysis examini
 
 ---
 
-*[Word Count: Section 8 - 412 words]*
 
 ---
 
@@ -876,11 +868,9 @@ India stands at a crossroads. Continuing the litigation-heavy status quo perpetu
 
 ---
 
-*[Word Count: Section 9 - 472 words]*
 
 ---
 
-**TOTAL PAPER WORD COUNT: 15,506 words**
 
 ---
 
