@@ -1,4 +1,15 @@
-# Welcome to your Lovable project
+# CiteCraft Pro - Legal Research & Citation Management Tool
+
+## 🌟 Features
+
+### Legal Research Scraper (NEW!)
+- **Multi-Source Search**: Search CourtListener, Google Scholar, and Justia
+- **Advanced Filtering**: Filter by jurisdiction, court, date range
+- **Add to Citations**: Import cases directly into your bibliography
+
+### Citation Management
+- **6 Citation Styles**: APA, MLA, Chicago, Harvard, Bluebook, ALWD
+- **Real-Time Preview**: See formatted citations as you work
 
 ## Project info
 
