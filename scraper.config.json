@@ -1,0 +1,30 @@
+{
+  "defaultSource": "all",
+  "defaultLimit": 10,
+  "rateLimits": {
+    "courtlistener": 1000,
+    "google-scholar": 2000,
+    "justia": 1500
+  },
+  "sources": {
+    "courtlistener": {
+      "enabled": true,
+      "baseUrl": "https://www.courtlistener.com",
+      "description": "Free legal opinion and case law database"
+    },
+    "google-scholar": {
+      "enabled": true,
+      "baseUrl": "https://scholar.google.com",
+      "description": "Legal case law search via Google Scholar"
+    },
+    "justia": {
+      "enabled": true,
+      "baseUrl": "https://law.justia.com",
+      "description": "Free case law and legal information database"
+    }
+  },
+  "outputDirectory": "./scraper-results",
+  "enableCache": true,
+  "cacheExpiryHours": 24,
+  "userAgent": "CiteCraftPro-LegalResearch/1.0"
+}

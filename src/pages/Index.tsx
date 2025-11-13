@@ -7,8 +7,10 @@ import CitationPanel from "@/components/CitationPanel";
 import DocumentPreview from "@/components/DocumentPreview";
 import GradingPanel from "@/components/GradingPanel";
 import StyleSelector from "@/components/StyleSelector";
+import { ScraperPanel } from "@/components/ScraperPanel";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { ScraperResult } from "@/scraper/types";
 
 interface Citation {
   id: string;
@@ -83,6 +85,29 @@ const Index = () => {
     });
   };
 
+  const handleAddCitationFromScraper = (result: ScraperResult) => {
+    const newCitation: Citation = {
+      id: result.id,
+      author: result.author || "Unknown Author",
+      title: result.title,
+      year: result.date ? parseInt(result.date.split('-')[0]) : null,
+      publication: result.metadata?.court || result.source,
+      url: result.url,
+      doi: null,
+      pages: null,
+      volume: null,
+      issue: null,
+      publisher: result.source,
+      citation_order: citations.length,
+    };
+
+    setCitations([...citations, newCitation]);
+    toast({
+      title: "Citation added",
+      description: `Added "${result.title}" to citations`,
+    });
+  };
+
   return (
     <div className="h-screen flex flex-col bg-background">
       {/* Header */}
@@ -118,20 +143,34 @@ const Index = () => {
       <div className="flex-1 flex overflow-hidden">
         {/* Left Panel - Editor & Upload */}
         <div className="w-1/2 flex flex-col border-r bg-muted/20">
-          <div className="p-4 border-b bg-card">
-            <h2 className="font-semibold mb-2">Upload & Edit</h2>
-            <FileUpload
-              onContentExtracted={handleContentChange}
-              onCitationsExtracted={handleCitationsExtracted}
-            />
-          </div>
+          <Tabs defaultValue="upload" className="flex-1 flex flex-col">
+            <div className="p-4 border-b bg-card">
+              <TabsList className="w-full">
+                <TabsTrigger value="upload" className="flex-1">Upload & Edit</TabsTrigger>
+                <TabsTrigger value="scraper" className="flex-1">Legal Research</TabsTrigger>
+              </TabsList>
+            </div>
 
-          <div className="flex-1 overflow-auto p-4">
-            <CitationPanel
-              citations={citations}
-              onCitationsChange={setCitations}
-            />
-          </div>
+            <TabsContent value="upload" className="flex-1 flex flex-col overflow-hidden m-0">
+              <div className="p-4 border-b bg-card">
+                <FileUpload
+                  onContentExtracted={handleContentChange}
+                  onCitationsExtracted={handleCitationsExtracted}
+                />
+              </div>
+
+              <div className="flex-1 overflow-auto p-4">
+                <CitationPanel
+                  citations={citations}
+                  onCitationsChange={setCitations}
+                />
+              </div>
+            </TabsContent>
+
+            <TabsContent value="scraper" className="flex-1 overflow-auto p-4 m-0">
+              <ScraperPanel onAddCitation={handleAddCitationFromScraper} />
+            </TabsContent>
+          </Tabs>
         </div>
 
         {/* Right Panel - Preview & Grading */}
