@@ -8,6 +8,7 @@ import DocumentPreview from "@/components/DocumentPreview";
 import GradingPanel from "@/components/GradingPanel";
 import StyleSelector from "@/components/StyleSelector";
 import { ScraperPanel } from "@/components/ScraperPanel";
+import { AIAnalysisPanel } from "@/components/AIAnalysisPanel";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ScraperResult } from "@/scraper/types";
@@ -33,6 +34,7 @@ const Index = () => {
   const [title, setTitle] = useState("Untitled Paper");
   const [content, setContent] = useState("");
   const [citationStyle, setCitationStyle] = useState("APA");
+  const [scrapedCases, setScrapedCases] = useState<ScraperResult[]>([]);
 
   const handleContentChange = (newContent: string) => {
     setContent(newContent);
@@ -102,6 +104,12 @@ const Index = () => {
     };
 
     setCitations([...citations, newCitation]);
+
+    // Track scraped cases for AI analysis
+    if (!scrapedCases.find(c => c.id === result.id)) {
+      setScrapedCases([...scrapedCases, result]);
+    }
+
     toast({
       title: "Citation added",
       description: `Added "${result.title}" to citations`,
@@ -148,6 +156,7 @@ const Index = () => {
               <TabsList className="w-full">
                 <TabsTrigger value="upload" className="flex-1">Upload & Edit</TabsTrigger>
                 <TabsTrigger value="scraper" className="flex-1">Legal Research</TabsTrigger>
+                <TabsTrigger value="ai-analysis" className="flex-1">AI Analysis</TabsTrigger>
               </TabsList>
             </div>
 
@@ -169,6 +178,14 @@ const Index = () => {
 
             <TabsContent value="scraper" className="flex-1 overflow-auto p-4 m-0">
               <ScraperPanel onAddCitation={handleAddCitationFromScraper} />
+            </TabsContent>
+
+            <TabsContent value="ai-analysis" className="flex-1 overflow-auto p-4 m-0">
+              <AIAnalysisPanel
+                scrapedCases={scrapedCases}
+                paperContent={content}
+                citations={citations}
+              />
             </TabsContent>
           </Tabs>
         </div>
