@@ -14,7 +14,9 @@
     "scraper:sources": "npm run scraper sources",
     "scraper:examples": "npm run scraper examples",
     "analyze": "tsx src/analysis/runComprehensiveAnalysis.ts",
-    "analyze:comprehensive": "tsx src/analysis/runComprehensiveAnalysis.ts"
+    "analyze:comprehensive": "tsx src/analysis/runComprehensiveAnalysis.ts",
+    "analyze:india": "tsx src/analysis/runIndianLegalAnalysis.ts",
+    "analyze:indian": "tsx src/analysis/runIndianLegalAnalysis.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.69.0",

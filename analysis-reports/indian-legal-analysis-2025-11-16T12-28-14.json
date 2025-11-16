@@ -1,0 +1,1443 @@
+{
+  "metadata": {
+    "generatedAt": "2025-11-16T12:28:14.626Z",
+    "totalSourcesSearched": 0,
+    "totalCasesAnalyzed": 0,
+    "dateRange": {
+      "from": "N/A",
+      "to": "N/A"
+    },
+    "currency": {
+      "exchangeRate": 83.5,
+      "note": "All amounts shown in both USD and INR (₹)"
+    }
+  },
+  "fieldAnalyses": {
+    "CIVIL_LITIGATION": {
+      "field": "Civil Litigation",
+      "totalCases": 0,
+      "sources": {
+        "courtListener": 0,
+        "googleScholar": 0,
+        "justia": 0
+      },
+      "dateRange": {
+        "earliest": "N/A",
+        "latest": "N/A"
+      },
+      "topCourts": [],
+      "topJurisdictions": [],
+      "keywordFrequency": [
+        {
+          "keyword": "suit",
+          "frequency": 3
+        },
+        {
+          "keyword": "civil",
+          "frequency": 2
+        },
+        {
+          "keyword": "contract",
+          "frequency": 2
+        },
+        {
+          "keyword": "procedure",
+          "frequency": 1
+        },
+        {
+          "keyword": "code",
+          "frequency": 1
+        },
+        {
+          "keyword": "specific",
+          "frequency": 1
+        },
+        {
+          "keyword": "performance",
+          "frequency": 1
+        },
+        {
+          "keyword": "injunction",
+          "frequency": 1
+        },
+        {
+          "keyword": "property",
+          "frequency": 1
+        },
+        {
+          "keyword": "dispute",
+          "frequency": 1
+        },
+        {
+          "keyword": "breach",
+          "frequency": 1
+        },
+        {
+          "keyword": "damages",
+          "frequency": 1
+        },
+        {
+          "keyword": "tort",
+          "frequency": 1
+        },
+        {
+          "keyword": "appeal",
+          "frequency": 1
+        },
+        {
+          "keyword": "summary",
+          "frequency": 1
+        }
+      ],
+      "avgBillingRate": 50,
+      "avgBillingRateINR": 4175,
+      "estimatedMarketSize": 450000000,
+      "estimatedMarketSizeINR": 37575000000,
+      "trends": {
+        "yearlyDistribution": {},
+        "growthRate": "N/A"
+      }
+    },
+    "CRIMINAL_LAW": {
+      "field": "Criminal Law",
+      "totalCases": 0,
+      "sources": {
+        "courtListener": 0,
+        "googleScholar": 0,
+        "justia": 0
+      },
+      "dateRange": {
+        "earliest": "N/A",
+        "latest": "N/A"
+      },
+      "topCourts": [],
+      "topJurisdictions": [],
+      "keywordFrequency": [
+        {
+          "keyword": "criminal",
+          "frequency": 3
+        },
+        {
+          "keyword": "bail",
+          "frequency": 2
+        },
+        {
+          "keyword": "Indian",
+          "frequency": 1
+        },
+        {
+          "keyword": "Penal",
+          "frequency": 1
+        },
+        {
+          "keyword": "Code",
+          "frequency": 1
+        },
+        {
+          "keyword": "CrPC",
+          "frequency": 1
+        },
+        {
+          "keyword": "procedure",
+          "frequency": 1
+        },
+        {
+          "keyword": "application",
+          "frequency": 1
+        },
+        {
+          "keyword": "anticipatory",
+          "frequency": 1
+        },
+        {
+          "keyword": "quashing",
+          "frequency": 1
+        },
+        {
+          "keyword": "appeal",
+          "frequency": 1
+        },
+        {
+          "keyword": "NDPS",
+          "frequency": 1
+        },
+        {
+          "keyword": "cases",
+          "frequency": 1
+        },
+        {
+          "keyword": "Section",
+          "frequency": 1
+        },
+        {
+          "keyword": "498A",
+          "frequency": 1
+        }
+      ],
+      "avgBillingRate": 40,
+      "avgBillingRateINR": 3340,
+      "estimatedMarketSize": 380000000,
+      "estimatedMarketSizeINR": 31730000000,
+      "trends": {
+        "yearlyDistribution": {},
+        "growthRate": "N/A"
+      }
+    },
+    "CORPORATE_COMMERCIAL": {
+      "field": "Corporate & Commercial Law",
+      "totalCases": 0,
+      "sources": {
+        "courtListener": 0,
+        "googleScholar": 0,
+        "justia": 0
+      },
+      "dateRange": {
+        "earliest": "N/A",
+        "latest": "N/A"
+      },
+      "topCourts": [],
+      "topJurisdictions": [],
+      "keywordFrequency": [
+        {
+          "keyword": "corporate",
+          "frequency": 2
+        },
+        {
+          "keyword": "Companies",
+          "frequency": 1
+        },
+        {
+          "keyword": "2013",
+          "frequency": 1
+        },
+        {
+          "keyword": "NCLT",
+          "frequency": 1
+        },
+        {
+          "keyword": "proceedings",
+          "frequency": 1
+        },
+        {
+          "keyword": "merger",
+          "frequency": 1
+        },
+        {
+          "keyword": "acquisition",
+          "frequency": 1
+        },
+        {
+          "keyword": "governance",
+          "frequency": 1
+        },
+        {
+          "keyword": "shareholder",
+          "frequency": 1
+        },
+        {
+          "keyword": "dispute",
+          "frequency": 1
+        },
+        {
+          "keyword": "SEBI",
+          "frequency": 1
+        },
+        {
+          "keyword": "regulations",
+          "frequency": 1
+        },
+        {
+          "keyword": "insolvency",
+          "frequency": 1
+        },
+        {
+          "keyword": "bankruptcy",
+          "frequency": 1
+        },
+        {
+          "keyword": "code",
+          "frequency": 1
+        }
+      ],
+      "avgBillingRate": 120,
+      "avgBillingRateINR": 10020,
+      "estimatedMarketSize": 520000000,
+      "estimatedMarketSizeINR": 43420000000,
+      "trends": {
+        "yearlyDistribution": {},
+        "growthRate": "N/A"
+      }
+    },
+    "TAX_LAW": {
+      "field": "Tax Law (Income Tax & GST)",
+      "totalCases": 0,
+      "sources": {
+        "courtListener": 0,
+        "googleScholar": 0,
+        "justia": 0
+      },
+      "dateRange": {
+        "earliest": "N/A",
+        "latest": "N/A"
+      },
+      "topCourts": [],
+      "topJurisdictions": [],
+      "keywordFrequency": [
+        {
+          "keyword": "income",
+          "frequency": 1
+        },
+        {
+          "keyword": "appeal",
+          "frequency": 1
+        },
+        {
+          "keyword": "litigation",
+          "frequency": 1
+        },
+        {
+          "keyword": "assessment",
+          "frequency": 1
+        },
+        {
+          "keyword": "customs",
+          "frequency": 1
+        },
+        {
+          "keyword": "duty",
+          "frequency": 1
+        },
+        {
+          "keyword": "advance",
+          "frequency": 1
+        },
+        {
+          "keyword": "ruling",
+          "frequency": 1
+        },
+        {
+          "keyword": "transfer",
+          "frequency": 1
+        },
+        {
+          "keyword": "pricing",
+          "frequency": 1
+        },
+        {
+          "keyword": "evasion",
+          "frequency": 1
+        },
+        {
+          "keyword": "prosecution",
+          "frequency": 1
+        },
+        {
+          "keyword": "ITAT",
+          "frequency": 1
+        },
+        {
+          "keyword": "tribunal",
+          "frequency": 1
+        },
+        {
+          "keyword": "refund",
+          "frequency": 1
+        }
+      ],
+      "avgBillingRate": 80,
+      "avgBillingRateINR": 6680,
+      "estimatedMarketSize": 410000000,
+      "estimatedMarketSizeINR": 34235000000,
+      "trends": {
+        "yearlyDistribution": {},
+        "growthRate": "N/A"
+      }
+    },
+    "INTELLECTUAL_PROPERTY": {
+      "field": "Intellectual Property",
+      "totalCases": 0,
+      "sources": {
+        "courtListener": 0,
+        "googleScholar": 0,
+        "justia": 0
+      },
+      "dateRange": {
+        "earliest": "N/A",
+        "latest": "N/A"
+      },
+      "topCourts": [],
+      "topJurisdictions": [],
+      "keywordFrequency": [
+        {
+          "keyword": "trademark",
+          "frequency": 2
+        },
+        {
+          "keyword": "infringement",
+          "frequency": 2
+        },
+        {
+          "keyword": "patent",
+          "frequency": 2
+        },
+        {
+          "keyword": "litigation",
+          "frequency": 1
+        },
+        {
+          "keyword": "copyright",
+          "frequency": 1
+        },
+        {
+          "keyword": "design",
+          "frequency": 1
+        },
+        {
+          "keyword": "registration",
+          "frequency": 1
+        },
+        {
+          "keyword": "passing",
+          "frequency": 1
+        },
+        {
+          "keyword": "trade",
+          "frequency": 1
+        },
+        {
+          "keyword": "secret",
+          "frequency": 1
+        },
+        {
+          "keyword": "geographical",
+          "frequency": 1
+        },
+        {
+          "keyword": "indication",
+          "frequency": 1
+        },
+        {
+          "keyword": "opposition",
+          "frequency": 1
+        },
+        {
+          "keyword": "cancellation",
+          "frequency": 1
+        },
+        {
+          "keyword": "licensing",
+          "frequency": 1
+        }
+      ],
+      "avgBillingRate": 90,
+      "avgBillingRateINR": 7515,
+      "estimatedMarketSize": 280000000,
+      "estimatedMarketSizeINR": 23380000000,
+      "trends": {
+        "yearlyDistribution": {},
+        "growthRate": "N/A"
+      }
+    },
+    "REAL_ESTATE_PROPERTY": {
+      "field": "Real Estate & Property Law",
+      "totalCases": 0,
+      "sources": {
+        "courtListener": 0,
+        "googleScholar": 0,
+        "justia": 0
+      },
+      "dateRange": {
+        "earliest": "N/A",
+        "latest": "N/A"
+      },
+      "topCourts": [],
+      "topJurisdictions": [],
+      "keywordFrequency": [
+        {
+          "keyword": "property",
+          "frequency": 3
+        },
+        {
+          "keyword": "dispute",
+          "frequency": 2
+        },
+        {
+          "keyword": "RERA",
+          "frequency": 1
+        },
+        {
+          "keyword": "litigation",
+          "frequency": 1
+        },
+        {
+          "keyword": "title",
+          "frequency": 1
+        },
+        {
+          "keyword": "landlord",
+          "frequency": 1
+        },
+        {
+          "keyword": "tenant",
+          "frequency": 1
+        },
+        {
+          "keyword": "sale",
+          "frequency": 1
+        },
+        {
+          "keyword": "deed",
+          "frequency": 1
+        },
+        {
+          "keyword": "mutation",
+          "frequency": 1
+        },
+        {
+          "keyword": "adverse",
+          "frequency": 1
+        },
+        {
+          "keyword": "possession",
+          "frequency": 1
+        },
+        {
+          "keyword": "real",
+          "frequency": 1
+        },
+        {
+          "keyword": "estate",
+          "frequency": 1
+        },
+        {
+          "keyword": "contract",
+          "frequency": 1
+        }
+      ],
+      "avgBillingRate": 55,
+      "avgBillingRateINR": 4592.5,
+      "estimatedMarketSize": 340000000,
+      "estimatedMarketSizeINR": 28390000000,
+      "trends": {
+        "yearlyDistribution": {},
+        "growthRate": "N/A"
+      }
+    },
+    "FAMILY_MATRIMONIAL": {
+      "field": "Family & Matrimonial Law",
+      "totalCases": 0,
+      "sources": {
+        "courtListener": 0,
+        "googleScholar": 0,
+        "justia": 0
+      },
+      "dateRange": {
+        "earliest": "N/A",
+        "latest": "N/A"
+      },
+      "topCourts": [],
+      "topJurisdictions": [],
+      "keywordFrequency": [
+        {
+          "keyword": "divorce",
+          "frequency": 2
+        },
+        {
+          "keyword": "petition",
+          "frequency": 1
+        },
+        {
+          "keyword": "custody",
+          "frequency": 1
+        },
+        {
+          "keyword": "child",
+          "frequency": 1
+        },
+        {
+          "keyword": "Hindu",
+          "frequency": 1
+        },
+        {
+          "keyword": "Marriage",
+          "frequency": 1
+        },
+        {
+          "keyword": "maintenance",
+          "frequency": 1
+        },
+        {
+          "keyword": "alimony",
+          "frequency": 1
+        },
+        {
+          "keyword": "domestic",
+          "frequency": 1
+        },
+        {
+          "keyword": "violence",
+          "frequency": 1
+        },
+        {
+          "keyword": "mutual",
+          "frequency": 1
+        },
+        {
+          "keyword": "consent",
+          "frequency": 1
+        },
+        {
+          "keyword": "restitution",
+          "frequency": 1
+        },
+        {
+          "keyword": "conjugal",
+          "frequency": 1
+        },
+        {
+          "keyword": "rights",
+          "frequency": 1
+        }
+      ],
+      "avgBillingRate": 45,
+      "avgBillingRateINR": 3757.5,
+      "estimatedMarketSize": 290000000,
+      "estimatedMarketSizeINR": 24215000000,
+      "trends": {
+        "yearlyDistribution": {},
+        "growthRate": "N/A"
+      }
+    },
+    "LABOUR_EMPLOYMENT": {
+      "field": "Labour & Employment Law",
+      "totalCases": 0,
+      "sources": {
+        "courtListener": 0,
+        "googleScholar": 0,
+        "justia": 0
+      },
+      "dateRange": {
+        "earliest": "N/A",
+        "latest": "N/A"
+      },
+      "topCourts": [],
+      "topJurisdictions": [],
+      "keywordFrequency": [
+        {
+          "keyword": "industrial",
+          "frequency": 2
+        },
+        {
+          "keyword": "labour",
+          "frequency": 2
+        },
+        {
+          "keyword": "compliance",
+          "frequency": 2
+        },
+        {
+          "keyword": "dispute",
+          "frequency": 1
+        },
+        {
+          "keyword": "wrongful",
+          "frequency": 1
+        },
+        {
+          "keyword": "termination",
+          "frequency": 1
+        },
+        {
+          "keyword": "court",
+          "frequency": 1
+        },
+        {
+          "keyword": "sexual",
+          "frequency": 1
+        },
+        {
+          "keyword": "harassment",
+          "frequency": 1
+        },
+        {
+          "keyword": "workplace",
+          "frequency": 1
+        },
+        {
+          "keyword": "retrenchment",
+          "frequency": 1
+        },
+        {
+          "keyword": "compensation",
+          "frequency": 1
+        },
+        {
+          "keyword": "tribunal",
+          "frequency": 1
+        },
+        {
+          "keyword": "minimum",
+          "frequency": 1
+        },
+        {
+          "keyword": "wages",
+          "frequency": 1
+        }
+      ],
+      "avgBillingRate": 50,
+      "avgBillingRateINR": 4175,
+      "estimatedMarketSize": 310000000,
+      "estimatedMarketSizeINR": 25885000000,
+      "trends": {
+        "yearlyDistribution": {},
+        "growthRate": "N/A"
+      }
+    },
+    "CONSTITUTIONAL_LAW": {
+      "field": "Constitutional & Public Interest Law",
+      "totalCases": 0,
+      "sources": {
+        "courtListener": 0,
+        "googleScholar": 0,
+        "justia": 0
+      },
+      "dateRange": {
+        "earliest": "N/A",
+        "latest": "N/A"
+      },
+      "topCourts": [],
+      "topJurisdictions": [],
+      "keywordFrequency": [
+        {
+          "keyword": "writ",
+          "frequency": 2
+        },
+        {
+          "keyword": "Article",
+          "frequency": 2
+        },
+        {
+          "keyword": "petition",
+          "frequency": 1
+        },
+        {
+          "keyword": "public",
+          "frequency": 1
+        },
+        {
+          "keyword": "interest",
+          "frequency": 1
+        },
+        {
+          "keyword": "litigation",
+          "frequency": 1
+        },
+        {
+          "keyword": "fundamental",
+          "frequency": 1
+        },
+        {
+          "keyword": "rights",
+          "frequency": 1
+        },
+        {
+          "keyword": "habeas",
+          "frequency": 1
+        },
+        {
+          "keyword": "corpus",
+          "frequency": 1
+        },
+        {
+          "keyword": "mandamus",
+          "frequency": 1
+        },
+        {
+          "keyword": "judicial",
+          "frequency": 1
+        },
+        {
+          "keyword": "review",
+          "frequency": 1
+        },
+        {
+          "keyword": "Supreme",
+          "frequency": 1
+        },
+        {
+          "keyword": "Court",
+          "frequency": 1
+        }
+      ],
+      "avgBillingRate": 70,
+      "avgBillingRateINR": 5845,
+      "estimatedMarketSize": 180000000,
+      "estimatedMarketSizeINR": 15030000000,
+      "trends": {
+        "yearlyDistribution": {},
+        "growthRate": "N/A"
+      }
+    },
+    "ARBITRATION_MEDIATION": {
+      "field": "Arbitration & Mediation",
+      "totalCases": 0,
+      "sources": {
+        "courtListener": 0,
+        "googleScholar": 0,
+        "justia": 0
+      },
+      "dateRange": {
+        "earliest": "N/A",
+        "latest": "N/A"
+      },
+      "topCourts": [],
+      "topJurisdictions": [],
+      "keywordFrequency": [
+        {
+          "keyword": "arbitration",
+          "frequency": 6
+        },
+        {
+          "keyword": "award",
+          "frequency": 2
+        },
+        {
+          "keyword": "Section",
+          "frequency": 2
+        },
+        {
+          "keyword": "enforcement",
+          "frequency": 1
+        },
+        {
+          "keyword": "foreign",
+          "frequency": 1
+        },
+        {
+          "keyword": "agreement",
+          "frequency": 1
+        },
+        {
+          "keyword": "mediation",
+          "frequency": 1
+        },
+        {
+          "keyword": "settlement",
+          "frequency": 1
+        },
+        {
+          "keyword": "international",
+          "frequency": 1
+        },
+        {
+          "keyword": "arbitrator",
+          "frequency": 1
+        },
+        {
+          "keyword": "appointment",
+          "frequency": 1
+        },
+        {
+          "keyword": "clause",
+          "frequency": 1
+        },
+        {
+          "keyword": "York",
+          "frequency": 1
+        },
+        {
+          "keyword": "Convention",
+          "frequency": 1
+        }
+      ],
+      "avgBillingRate": 100,
+      "avgBillingRateINR": 8350,
+      "estimatedMarketSize": 220000000,
+      "estimatedMarketSizeINR": 18370000000,
+      "trends": {
+        "yearlyDistribution": {},
+        "growthRate": "N/A"
+      }
+    },
+    "BANKING_FINANCE": {
+      "field": "Banking & Finance Law",
+      "totalCases": 0,
+      "sources": {
+        "courtListener": 0,
+        "googleScholar": 0,
+        "justia": 0
+      },
+      "dateRange": {
+        "earliest": "N/A",
+        "latest": "N/A"
+      },
+      "topCourts": [],
+      "topJurisdictions": [],
+      "keywordFrequency": [
+        {
+          "keyword": "recovery",
+          "frequency": 2
+        },
+        {
+          "keyword": "regulations",
+          "frequency": 2
+        },
+        {
+          "keyword": "fraud",
+          "frequency": 2
+        },
+        {
+          "keyword": "SARFAESI",
+          "frequency": 1
+        },
+        {
+          "keyword": "debt",
+          "frequency": 1
+        },
+        {
+          "keyword": "tribunal",
+          "frequency": 1
+        },
+        {
+          "keyword": "loan",
+          "frequency": 1
+        },
+        {
+          "keyword": "mortgage",
+          "frequency": 1
+        },
+        {
+          "keyword": "enforcement",
+          "frequency": 1
+        },
+        {
+          "keyword": "banking",
+          "frequency": 1
+        },
+        {
+          "keyword": "non-performing",
+          "frequency": 1
+        },
+        {
+          "keyword": "asset",
+          "frequency": 1
+        },
+        {
+          "keyword": "financial",
+          "frequency": 1
+        },
+        {
+          "keyword": "NBFC",
+          "frequency": 1
+        },
+        {
+          "keyword": "guarantee",
+          "frequency": 1
+        }
+      ],
+      "avgBillingRate": 85,
+      "avgBillingRateINR": 7097.5,
+      "estimatedMarketSize": 270000000,
+      "estimatedMarketSizeINR": 22545000000,
+      "trends": {
+        "yearlyDistribution": {},
+        "growthRate": "N/A"
+      }
+    },
+    "CONSUMER_PROTECTION": {
+      "field": "Consumer Protection",
+      "totalCases": 0,
+      "sources": {
+        "courtListener": 0,
+        "googleScholar": 0,
+        "justia": 0
+      },
+      "dateRange": {
+        "earliest": "N/A",
+        "latest": "N/A"
+      },
+      "topCourts": [],
+      "topJurisdictions": [],
+      "keywordFrequency": [
+        {
+          "keyword": "consumer",
+          "frequency": 6
+        },
+        {
+          "keyword": "forum",
+          "frequency": 1
+        },
+        {
+          "keyword": "deficiency",
+          "frequency": 1
+        },
+        {
+          "keyword": "service",
+          "frequency": 1
+        },
+        {
+          "keyword": "complaint",
+          "frequency": 1
+        },
+        {
+          "keyword": "unfair",
+          "frequency": 1
+        },
+        {
+          "keyword": "trade",
+          "frequency": 1
+        },
+        {
+          "keyword": "practice",
+          "frequency": 1
+        },
+        {
+          "keyword": "product",
+          "frequency": 1
+        },
+        {
+          "keyword": "liability",
+          "frequency": 1
+        },
+        {
+          "keyword": "dispute",
+          "frequency": 1
+        },
+        {
+          "keyword": "National",
+          "frequency": 1
+        },
+        {
+          "keyword": "Consumer",
+          "frequency": 1
+        },
+        {
+          "keyword": "Commission",
+          "frequency": 1
+        },
+        {
+          "keyword": "compensation",
+          "frequency": 1
+        }
+      ],
+      "avgBillingRate": 40,
+      "avgBillingRateINR": 3340,
+      "estimatedMarketSize": 150000000,
+      "estimatedMarketSizeINR": 12525000000,
+      "trends": {
+        "yearlyDistribution": {},
+        "growthRate": "N/A"
+      }
+    },
+    "CYBER_DATA_PRIVACY": {
+      "field": "Cyber Law & Data Privacy",
+      "totalCases": 0,
+      "sources": {
+        "courtListener": 0,
+        "googleScholar": 0,
+        "justia": 0
+      },
+      "dateRange": {
+        "earliest": "N/A",
+        "latest": "N/A"
+      },
+      "topCourts": [],
+      "topJurisdictions": [],
+      "keywordFrequency": [
+        {
+          "keyword": "cyber",
+          "frequency": 2
+        },
+        {
+          "keyword": "data",
+          "frequency": 2
+        },
+        {
+          "keyword": "2000",
+          "frequency": 1
+        },
+        {
+          "keyword": "crime",
+          "frequency": 1
+        },
+        {
+          "keyword": "breach",
+          "frequency": 1
+        },
+        {
+          "keyword": "privacy",
+          "frequency": 1
+        },
+        {
+          "keyword": "violation",
+          "frequency": 1
+        },
+        {
+          "keyword": "intermediary",
+          "frequency": 1
+        },
+        {
+          "keyword": "liability",
+          "frequency": 1
+        },
+        {
+          "keyword": "digital",
+          "frequency": 1
+        },
+        {
+          "keyword": "evidence",
+          "frequency": 1
+        },
+        {
+          "keyword": "protection",
+          "frequency": 1
+        },
+        {
+          "keyword": "fraud",
+          "frequency": 1
+        },
+        {
+          "keyword": "online",
+          "frequency": 1
+        },
+        {
+          "keyword": "defamation",
+          "frequency": 1
+        }
+      ],
+      "avgBillingRate": 75,
+      "avgBillingRateINR": 6262.5,
+      "estimatedMarketSize": 160000000,
+      "estimatedMarketSizeINR": 13360000000,
+      "trends": {
+        "yearlyDistribution": {},
+        "growthRate": "N/A"
+      }
+    }
+  },
+  "industryOverview": {
+    "totalMarketSize": 3960000000,
+    "totalMarketSizeINR": 330660000000,
+    "totalLawyers": 2000000,
+    "totalLawFirms": 85000,
+    "averageRevenue": 46588.23529411765,
+    "averageRevenueINR": 3890117.6470588236,
+    "registeredAdvocates": 2000000,
+    "seniorAdvocates": 1500
+  },
+  "financialBreakdown": {
+    "byField": [
+      {
+        "field": "Corporate & Commercial Law",
+        "marketSize": 520000000,
+        "marketSizeINR": 43420000000,
+        "percentage": 13.131313131313133,
+        "avgBillingRate": 120,
+        "avgBillingRateINR": 10020,
+        "estimatedHoursPerYear": 4333333
+      },
+      {
+        "field": "Civil Litigation",
+        "marketSize": 450000000,
+        "marketSizeINR": 37575000000,
+        "percentage": 11.363636363636363,
+        "avgBillingRate": 50,
+        "avgBillingRateINR": 4175,
+        "estimatedHoursPerYear": 9000000
+      },
+      {
+        "field": "Tax Law (Income Tax & GST)",
+        "marketSize": 410000000,
+        "marketSizeINR": 34235000000,
+        "percentage": 10.353535353535353,
+        "avgBillingRate": 80,
+        "avgBillingRateINR": 6680,
+        "estimatedHoursPerYear": 5125000
+      },
+      {
+        "field": "Criminal Law",
+        "marketSize": 380000000,
+        "marketSizeINR": 31730000000,
+        "percentage": 9.595959595959595,
+        "avgBillingRate": 40,
+        "avgBillingRateINR": 3340,
+        "estimatedHoursPerYear": 9500000
+      },
+      {
+        "field": "Real Estate & Property Law",
+        "marketSize": 340000000,
+        "marketSizeINR": 28390000000,
+        "percentage": 8.585858585858585,
+        "avgBillingRate": 55,
+        "avgBillingRateINR": 4592.5,
+        "estimatedHoursPerYear": 6181818
+      },
+      {
+        "field": "Labour & Employment Law",
+        "marketSize": 310000000,
+        "marketSizeINR": 25885000000,
+        "percentage": 7.828282828282829,
+        "avgBillingRate": 50,
+        "avgBillingRateINR": 4175,
+        "estimatedHoursPerYear": 6200000
+      },
+      {
+        "field": "Family & Matrimonial Law",
+        "marketSize": 290000000,
+        "marketSizeINR": 24215000000,
+        "percentage": 7.3232323232323235,
+        "avgBillingRate": 45,
+        "avgBillingRateINR": 3757.5,
+        "estimatedHoursPerYear": 6444444
+      },
+      {
+        "field": "Intellectual Property",
+        "marketSize": 280000000,
+        "marketSizeINR": 23380000000,
+        "percentage": 7.07070707070707,
+        "avgBillingRate": 90,
+        "avgBillingRateINR": 7515,
+        "estimatedHoursPerYear": 3111111
+      },
+      {
+        "field": "Banking & Finance Law",
+        "marketSize": 270000000,
+        "marketSizeINR": 22545000000,
+        "percentage": 6.8181818181818175,
+        "avgBillingRate": 85,
+        "avgBillingRateINR": 7097.5,
+        "estimatedHoursPerYear": 3176471
+      },
+      {
+        "field": "Arbitration & Mediation",
+        "marketSize": 220000000,
+        "marketSizeINR": 18370000000,
+        "percentage": 5.555555555555555,
+        "avgBillingRate": 100,
+        "avgBillingRateINR": 8350,
+        "estimatedHoursPerYear": 2200000
+      },
+      {
+        "field": "Constitutional & Public Interest Law",
+        "marketSize": 180000000,
+        "marketSizeINR": 15030000000,
+        "percentage": 4.545454545454546,
+        "avgBillingRate": 70,
+        "avgBillingRateINR": 5845,
+        "estimatedHoursPerYear": 2571429
+      },
+      {
+        "field": "Cyber Law & Data Privacy",
+        "marketSize": 160000000,
+        "marketSizeINR": 13360000000,
+        "percentage": 4.040404040404041,
+        "avgBillingRate": 75,
+        "avgBillingRateINR": 6262.5,
+        "estimatedHoursPerYear": 2133333
+      },
+      {
+        "field": "Consumer Protection",
+        "marketSize": 150000000,
+        "marketSizeINR": 12525000000,
+        "percentage": 3.787878787878788,
+        "avgBillingRate": 40,
+        "avgBillingRateINR": 3340,
+        "estimatedHoursPerYear": 3750000
+      }
+    ],
+    "totalRevenue": 3960000000,
+    "totalRevenueINR": 330660000000
+  },
+  "balanceSheet": {
+    "assets": {
+      "cashEquivalents": 475200000,
+      "cashEquivalentsINR": 39679200000,
+      "accountsReceivable": 871200000,
+      "accountsReceivableINR": 72745200000,
+      "workInProgress": 554400000,
+      "workInProgressINR": 46292400000,
+      "fixedAssets": 1108800000,
+      "fixedAssetsINR": 92584800000,
+      "totalAssets": 3009600000,
+      "totalAssetsINR": 251301600000
+    },
+    "liabilities": {
+      "accountsPayable": 396000000,
+      "accountsPayableINR": 33066000000,
+      "deferredRevenue": 237600000,
+      "deferredRevenueINR": 19839600000,
+      "longTermDebt": 554400000,
+      "longTermDebtINR": 46292400000,
+      "totalLiabilities": 1188000000,
+      "totalLiabilitiesINR": 99198000000
+    },
+    "equity": {
+      "retainedEarnings": 792000000,
+      "retainedEarningsINR": 66132000000,
+      "partnerCapital": 1029600000,
+      "partnerCapitalINR": 85971600000,
+      "totalEquity": 1821600000,
+      "totalEquityINR": 152103600000
+    }
+  },
+  "trends": {
+    "emergingAreas": [
+      "Data not sufficient for trend analysis"
+    ],
+    "decliningAreas": [
+      "Data not sufficient for trend analysis"
+    ],
+    "hotTopics": [
+      {
+        "topic": "dispute",
+        "mentions": 6
+      },
+      {
+        "topic": "arbitration",
+        "mentions": 6
+      },
+      {
+        "topic": "consumer",
+        "mentions": 6
+      },
+      {
+        "topic": "property",
+        "mentions": 4
+      },
+      {
+        "topic": "litigation",
+        "mentions": 4
+      },
+      {
+        "topic": "suit",
+        "mentions": 3
+      },
+      {
+        "topic": "contract",
+        "mentions": 3
+      },
+      {
+        "topic": "appeal",
+        "mentions": 3
+      },
+      {
+        "topic": "criminal",
+        "mentions": 3
+      },
+      {
+        "topic": "Section",
+        "mentions": 3
+      },
+      {
+        "topic": "regulations",
+        "mentions": 3
+      },
+      {
+        "topic": "tribunal",
+        "mentions": 3
+      },
+      {
+        "topic": "fraud",
+        "mentions": 3
+      },
+      {
+        "topic": "civil",
+        "mentions": 2
+      },
+      {
+        "topic": "procedure",
+        "mentions": 2
+      },
+      {
+        "topic": "code",
+        "mentions": 2
+      },
+      {
+        "topic": "breach",
+        "mentions": 2
+      },
+      {
+        "topic": "bail",
+        "mentions": 2
+      },
+      {
+        "topic": "corporate",
+        "mentions": 2
+      },
+      {
+        "topic": "trademark",
+        "mentions": 2
+      }
+    ]
+  },
+  "regionalAnalysis": {
+    "majorLegalHubs": [
+      {
+        "city": "New Delhi",
+        "lawyers": 450000,
+        "courts": [
+          "Supreme Court of India",
+          "Delhi High Court",
+          "District Courts"
+        ],
+        "specialization": [
+          "Constitutional Law",
+          "Corporate Law",
+          "Tax Law"
+        ]
+      },
+      {
+        "city": "Mumbai",
+        "lawyers": 380000,
+        "courts": [
+          "Bombay High Court",
+          "Commercial Courts"
+        ],
+        "specialization": [
+          "Corporate Law",
+          "Banking & Finance",
+          "Arbitration"
+        ]
+      },
+      {
+        "city": "Bangalore",
+        "lawyers": 220000,
+        "courts": [
+          "Karnataka High Court",
+          "Commercial Courts"
+        ],
+        "specialization": [
+          "IP Law",
+          "Corporate Law",
+          "Cyber Law"
+        ]
+      },
+      {
+        "city": "Chennai",
+        "lawyers": 180000,
+        "courts": [
+          "Madras High Court",
+          "District Courts"
+        ],
+        "specialization": [
+          "Civil Litigation",
+          "Corporate Law",
+          "IP Law"
+        ]
+      },
+      {
+        "city": "Kolkata",
+        "lawyers": 160000,
+        "courts": [
+          "Calcutta High Court",
+          "District Courts"
+        ],
+        "specialization": [
+          "Civil Litigation",
+          "Tax Law",
+          "Constitutional Law"
+        ]
+      }
+    ]
+  }
+}
