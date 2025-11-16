@@ -8,7 +8,7 @@ import DocumentPreview from "@/components/DocumentPreview";
 import GradingPanel from "@/components/GradingPanel";
 import StyleSelector from "@/components/StyleSelector";
 import { ScraperPanel } from "@/components/ScraperPanel";
-import { AIAnalysisPanel } from "@/components/AIAnalysisPanel";
+import { FreeAIPanel } from "@/components/FreeAIPanel";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ScraperResult } from "@/scraper/types";
@@ -181,7 +181,7 @@ const Index = () => {
             </TabsContent>
 
             <TabsContent value="ai-analysis" className="flex-1 overflow-auto p-4 m-0">
-              <AIAnalysisPanel
+              <FreeAIPanel
                 scrapedCases={scrapedCases}
                 paperContent={content}
                 citations={citations}
