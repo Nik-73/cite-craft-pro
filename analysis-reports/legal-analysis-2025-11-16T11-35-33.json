@@ -1,0 +1,1214 @@
+{
+  "metadata": {
+    "generatedAt": "2025-11-16T11:35:33.954Z",
+    "totalSourcesSearched": 0,
+    "totalCasesAnalyzed": 0,
+    "dateRange": {
+      "from": "N/A",
+      "to": "N/A"
+    }
+  },
+  "fieldAnalyses": {
+    "CRIMINAL": {
+      "field": "Criminal Law",
+      "totalCases": 0,
+      "sources": {
+        "courtListener": 0,
+        "googleScholar": 0,
+        "justia": 0
+      },
+      "dateRange": {
+        "earliest": "N/A",
+        "latest": "N/A"
+      },
+      "topCourts": [],
+      "topJurisdictions": [],
+      "keywordFrequency": [
+        {
+          "keyword": "criminal",
+          "frequency": 4
+        },
+        {
+          "keyword": "procedure",
+          "frequency": 1
+        },
+        {
+          "keyword": "fourth",
+          "frequency": 1
+        },
+        {
+          "keyword": "amendment",
+          "frequency": 1
+        },
+        {
+          "keyword": "search",
+          "frequency": 1
+        },
+        {
+          "keyword": "seizure",
+          "frequency": 1
+        },
+        {
+          "keyword": "miranda",
+          "frequency": 1
+        },
+        {
+          "keyword": "rights",
+          "frequency": 1
+        },
+        {
+          "keyword": "interrogation",
+          "frequency": 1
+        },
+        {
+          "keyword": "sentencing",
+          "frequency": 1
+        },
+        {
+          "keyword": "guidelines",
+          "frequency": 1
+        },
+        {
+          "keyword": "appeals",
+          "frequency": 1
+        },
+        {
+          "keyword": "prosecutorial",
+          "frequency": 1
+        },
+        {
+          "keyword": "misconduct",
+          "frequency": 1
+        },
+        {
+          "keyword": "jury",
+          "frequency": 1
+        }
+      ],
+      "avgBillingRate": 250,
+      "estimatedMarketSize": 28000000000,
+      "trends": {
+        "yearlyDistribution": {},
+        "growthRate": "N/A"
+      }
+    },
+    "CIVIL_LITIGATION": {
+      "field": "Civil Litigation",
+      "totalCases": 0,
+      "sources": {
+        "courtListener": 0,
+        "googleScholar": 0,
+        "justia": 0
+      },
+      "dateRange": {
+        "earliest": "N/A",
+        "latest": "N/A"
+      },
+      "topCourts": [],
+      "topJurisdictions": [],
+      "keywordFrequency": [
+        {
+          "keyword": "personal",
+          "frequency": 1
+        },
+        {
+          "keyword": "injury",
+          "frequency": 1
+        },
+        {
+          "keyword": "negligence",
+          "frequency": 1
+        },
+        {
+          "keyword": "medical",
+          "frequency": 1
+        },
+        {
+          "keyword": "malpractice",
+          "frequency": 1
+        },
+        {
+          "keyword": "breach",
+          "frequency": 1
+        },
+        {
+          "keyword": "contract",
+          "frequency": 1
+        },
+        {
+          "keyword": "summary",
+          "frequency": 1
+        },
+        {
+          "keyword": "judgment",
+          "frequency": 1
+        },
+        {
+          "keyword": "motion",
+          "frequency": 1
+        },
+        {
+          "keyword": "class",
+          "frequency": 1
+        },
+        {
+          "keyword": "action",
+          "frequency": 1
+        },
+        {
+          "keyword": "certification",
+          "frequency": 1
+        },
+        {
+          "keyword": "discovery",
+          "frequency": 1
+        },
+        {
+          "keyword": "disputes",
+          "frequency": 1
+        }
+      ],
+      "avgBillingRate": 350,
+      "estimatedMarketSize": 45000000000,
+      "trends": {
+        "yearlyDistribution": {},
+        "growthRate": "N/A"
+      }
+    },
+    "CORPORATE": {
+      "field": "Corporate Law",
+      "totalCases": 0,
+      "sources": {
+        "courtListener": 0,
+        "googleScholar": 0,
+        "justia": 0
+      },
+      "dateRange": {
+        "earliest": "N/A",
+        "latest": "N/A"
+      },
+      "topCourts": [],
+      "topJurisdictions": [],
+      "keywordFrequency": [
+        {
+          "keyword": "corporate",
+          "frequency": 3
+        },
+        {
+          "keyword": "securities",
+          "frequency": 2
+        },
+        {
+          "keyword": "merger",
+          "frequency": 1
+        },
+        {
+          "keyword": "acquisition",
+          "frequency": 1
+        },
+        {
+          "keyword": "governance",
+          "frequency": 1
+        },
+        {
+          "keyword": "regulation",
+          "frequency": 1
+        },
+        {
+          "keyword": "shareholder",
+          "frequency": 1
+        },
+        {
+          "keyword": "derivative",
+          "frequency": 1
+        },
+        {
+          "keyword": "fiduciary",
+          "frequency": 1
+        },
+        {
+          "keyword": "duty",
+          "frequency": 1
+        },
+        {
+          "keyword": "directors",
+          "frequency": 1
+        },
+        {
+          "keyword": "veil",
+          "frequency": 1
+        },
+        {
+          "keyword": "piercing",
+          "frequency": 1
+        },
+        {
+          "keyword": "business",
+          "frequency": 1
+        },
+        {
+          "keyword": "judgment",
+          "frequency": 1
+        }
+      ],
+      "avgBillingRate": 650,
+      "estimatedMarketSize": 67000000000,
+      "trends": {
+        "yearlyDistribution": {},
+        "growthRate": "N/A"
+      }
+    },
+    "INTELLECTUAL_PROPERTY": {
+      "field": "Intellectual Property",
+      "totalCases": 0,
+      "sources": {
+        "courtListener": 0,
+        "googleScholar": 0,
+        "justia": 0
+      },
+      "dateRange": {
+        "earliest": "N/A",
+        "latest": "N/A"
+      },
+      "topCourts": [],
+      "topJurisdictions": [],
+      "keywordFrequency": [
+        {
+          "keyword": "patent",
+          "frequency": 4
+        },
+        {
+          "keyword": "trademark",
+          "frequency": 2
+        },
+        {
+          "keyword": "infringement",
+          "frequency": 1
+        },
+        {
+          "keyword": "dilution",
+          "frequency": 1
+        },
+        {
+          "keyword": "copyright",
+          "frequency": 1
+        },
+        {
+          "keyword": "fair",
+          "frequency": 1
+        },
+        {
+          "keyword": "trade",
+          "frequency": 1
+        },
+        {
+          "keyword": "secret",
+          "frequency": 1
+        },
+        {
+          "keyword": "misappropriation",
+          "frequency": 1
+        },
+        {
+          "keyword": "validity",
+          "frequency": 1
+        },
+        {
+          "keyword": "DMCA",
+          "frequency": 1
+        },
+        {
+          "keyword": "safe",
+          "frequency": 1
+        },
+        {
+          "keyword": "harbor",
+          "frequency": 1
+        },
+        {
+          "keyword": "likelihood",
+          "frequency": 1
+        },
+        {
+          "keyword": "confusion",
+          "frequency": 1
+        }
+      ],
+      "avgBillingRate": 550,
+      "estimatedMarketSize": 38000000000,
+      "trends": {
+        "yearlyDistribution": {},
+        "growthRate": "N/A"
+      }
+    },
+    "EMPLOYMENT": {
+      "field": "Employment & Labor Law",
+      "totalCases": 0,
+      "sources": {
+        "courtListener": 0,
+        "googleScholar": 0,
+        "justia": 0
+      },
+      "dateRange": {
+        "earliest": "N/A",
+        "latest": "N/A"
+      },
+      "topCourts": [],
+      "topJurisdictions": [],
+      "keywordFrequency": [
+        {
+          "keyword": "employment",
+          "frequency": 1
+        },
+        {
+          "keyword": "discrimination",
+          "frequency": 1
+        },
+        {
+          "keyword": "wrongful",
+          "frequency": 1
+        },
+        {
+          "keyword": "termination",
+          "frequency": 1
+        },
+        {
+          "keyword": "wage",
+          "frequency": 1
+        },
+        {
+          "keyword": "hour",
+          "frequency": 1
+        },
+        {
+          "keyword": "violations",
+          "frequency": 1
+        },
+        {
+          "keyword": "FMLA",
+          "frequency": 1
+        },
+        {
+          "keyword": "leave",
+          "frequency": 1
+        },
+        {
+          "keyword": "reasonable",
+          "frequency": 1
+        },
+        {
+          "keyword": "accommodation",
+          "frequency": 1
+        },
+        {
+          "keyword": "sexual",
+          "frequency": 1
+        },
+        {
+          "keyword": "harassment",
+          "frequency": 1
+        },
+        {
+          "keyword": "workplace",
+          "frequency": 1
+        },
+        {
+          "keyword": "non-compete",
+          "frequency": 1
+        }
+      ],
+      "avgBillingRate": 325,
+      "estimatedMarketSize": 31000000000,
+      "trends": {
+        "yearlyDistribution": {},
+        "growthRate": "N/A"
+      }
+    },
+    "FAMILY": {
+      "field": "Family Law",
+      "totalCases": 0,
+      "sources": {
+        "courtListener": 0,
+        "googleScholar": 0,
+        "justia": 0
+      },
+      "dateRange": {
+        "earliest": "N/A",
+        "latest": "N/A"
+      },
+      "topCourts": [],
+      "topJurisdictions": [],
+      "keywordFrequency": [
+        {
+          "keyword": "child",
+          "frequency": 2
+        },
+        {
+          "keyword": "property",
+          "frequency": 2
+        },
+        {
+          "keyword": "support",
+          "frequency": 2
+        },
+        {
+          "keyword": "custody",
+          "frequency": 1
+        },
+        {
+          "keyword": "best",
+          "frequency": 1
+        },
+        {
+          "keyword": "interest",
+          "frequency": 1
+        },
+        {
+          "keyword": "divorce",
+          "frequency": 1
+        },
+        {
+          "keyword": "division",
+          "frequency": 1
+        },
+        {
+          "keyword": "spousal",
+          "frequency": 1
+        },
+        {
+          "keyword": "alimony",
+          "frequency": 1
+        },
+        {
+          "keyword": "calculation",
+          "frequency": 1
+        },
+        {
+          "keyword": "adoption",
+          "frequency": 1
+        },
+        {
+          "keyword": "termination",
+          "frequency": 1
+        },
+        {
+          "keyword": "rights",
+          "frequency": 1
+        },
+        {
+          "keyword": "domestic",
+          "frequency": 1
+        }
+      ],
+      "avgBillingRate": 275,
+      "estimatedMarketSize": 19000000000,
+      "trends": {
+        "yearlyDistribution": {},
+        "growthRate": "N/A"
+      }
+    },
+    "TAX": {
+      "field": "Tax Law",
+      "totalCases": 0,
+      "sources": {
+        "courtListener": 0,
+        "googleScholar": 0,
+        "justia": 0
+      },
+      "dateRange": {
+        "earliest": "N/A",
+        "latest": "N/A"
+      },
+      "topCourts": [],
+      "topJurisdictions": [],
+      "keywordFrequency": [
+        {
+          "keyword": "evasion",
+          "frequency": 1
+        },
+        {
+          "keyword": "fraud",
+          "frequency": 1
+        },
+        {
+          "keyword": "audit",
+          "frequency": 1
+        },
+        {
+          "keyword": "challenge",
+          "frequency": 1
+        },
+        {
+          "keyword": "estate",
+          "frequency": 1
+        },
+        {
+          "keyword": "planning",
+          "frequency": 1
+        },
+        {
+          "keyword": "corporate",
+          "frequency": 1
+        },
+        {
+          "keyword": "structure",
+          "frequency": 1
+        },
+        {
+          "keyword": "deduction",
+          "frequency": 1
+        },
+        {
+          "keyword": "business",
+          "frequency": 1
+        },
+        {
+          "keyword": "transfer",
+          "frequency": 1
+        },
+        {
+          "keyword": "pricing",
+          "frequency": 1
+        },
+        {
+          "keyword": "treaty",
+          "frequency": 1
+        },
+        {
+          "keyword": "interpretation",
+          "frequency": 1
+        },
+        {
+          "keyword": "innocent",
+          "frequency": 1
+        }
+      ],
+      "avgBillingRate": 475,
+      "estimatedMarketSize": 29000000000,
+      "trends": {
+        "yearlyDistribution": {},
+        "growthRate": "N/A"
+      }
+    },
+    "REAL_ESTATE": {
+      "field": "Real Estate Law",
+      "totalCases": 0,
+      "sources": {
+        "courtListener": 0,
+        "googleScholar": 0,
+        "justia": 0
+      },
+      "dateRange": {
+        "earliest": "N/A",
+        "latest": "N/A"
+      },
+      "topCourts": [],
+      "topJurisdictions": [],
+      "keywordFrequency": [
+        {
+          "keyword": "title",
+          "frequency": 2
+        },
+        {
+          "keyword": "dispute",
+          "frequency": 2
+        },
+        {
+          "keyword": "landlord",
+          "frequency": 1
+        },
+        {
+          "keyword": "tenant",
+          "frequency": 1
+        },
+        {
+          "keyword": "eviction",
+          "frequency": 1
+        },
+        {
+          "keyword": "real",
+          "frequency": 1
+        },
+        {
+          "keyword": "estate",
+          "frequency": 1
+        },
+        {
+          "keyword": "transaction",
+          "frequency": 1
+        },
+        {
+          "keyword": "zoning",
+          "frequency": 1
+        },
+        {
+          "keyword": "variance",
+          "frequency": 1
+        },
+        {
+          "keyword": "eminent",
+          "frequency": 1
+        },
+        {
+          "keyword": "domain",
+          "frequency": 1
+        },
+        {
+          "keyword": "compensation",
+          "frequency": 1
+        },
+        {
+          "keyword": "construction",
+          "frequency": 1
+        },
+        {
+          "keyword": "defect",
+          "frequency": 1
+        }
+      ],
+      "avgBillingRate": 325,
+      "estimatedMarketSize": 24000000000,
+      "trends": {
+        "yearlyDistribution": {},
+        "growthRate": "N/A"
+      }
+    },
+    "ENVIRONMENTAL": {
+      "field": "Environmental Law",
+      "totalCases": 0,
+      "sources": {
+        "courtListener": 0,
+        "googleScholar": 0,
+        "justia": 0
+      },
+      "dateRange": {
+        "earliest": "N/A",
+        "latest": "N/A"
+      },
+      "topCourts": [],
+      "topJurisdictions": [],
+      "keywordFrequency": [
+        {
+          "keyword": "clean",
+          "frequency": 2
+        },
+        {
+          "keyword": "environmental",
+          "frequency": 2
+        },
+        {
+          "keyword": "water",
+          "frequency": 1
+        },
+        {
+          "keyword": "violation",
+          "frequency": 1
+        },
+        {
+          "keyword": "enforcement",
+          "frequency": 1
+        },
+        {
+          "keyword": "NEPA",
+          "frequency": 1
+        },
+        {
+          "keyword": "impact",
+          "frequency": 1
+        },
+        {
+          "keyword": "toxic",
+          "frequency": 1
+        },
+        {
+          "keyword": "tort",
+          "frequency": 1
+        },
+        {
+          "keyword": "contamination",
+          "frequency": 1
+        },
+        {
+          "keyword": "endangered",
+          "frequency": 1
+        },
+        {
+          "keyword": "species",
+          "frequency": 1
+        },
+        {
+          "keyword": "regulation",
+          "frequency": 1
+        },
+        {
+          "keyword": "superfund",
+          "frequency": 1
+        },
+        {
+          "keyword": "liability",
+          "frequency": 1
+        }
+      ],
+      "avgBillingRate": 425,
+      "estimatedMarketSize": 16000000000,
+      "trends": {
+        "yearlyDistribution": {},
+        "growthRate": "N/A"
+      }
+    },
+    "IMMIGRATION": {
+      "field": "Immigration Law",
+      "totalCases": 0,
+      "sources": {
+        "courtListener": 0,
+        "googleScholar": 0,
+        "justia": 0
+      },
+      "dateRange": {
+        "earliest": "N/A",
+        "latest": "N/A"
+      },
+      "topCourts": [],
+      "topJurisdictions": [],
+      "keywordFrequency": [
+        {
+          "keyword": "immigration",
+          "frequency": 3
+        },
+        {
+          "keyword": "asylum",
+          "frequency": 2
+        },
+        {
+          "keyword": "petition",
+          "frequency": 2
+        },
+        {
+          "keyword": "application",
+          "frequency": 1
+        },
+        {
+          "keyword": "deportation",
+          "frequency": 1
+        },
+        {
+          "keyword": "removal",
+          "frequency": 1
+        },
+        {
+          "keyword": "visa",
+          "frequency": 1
+        },
+        {
+          "keyword": "naturalization",
+          "frequency": 1
+        },
+        {
+          "keyword": "citizenship",
+          "frequency": 1
+        },
+        {
+          "keyword": "detention",
+          "frequency": 1
+        },
+        {
+          "keyword": "employment",
+          "frequency": 1
+        },
+        {
+          "keyword": "authorization",
+          "frequency": 1
+        },
+        {
+          "keyword": "family",
+          "frequency": 1
+        },
+        {
+          "keyword": "credible",
+          "frequency": 1
+        },
+        {
+          "keyword": "fear",
+          "frequency": 1
+        }
+      ],
+      "avgBillingRate": 225,
+      "estimatedMarketSize": 8000000000,
+      "trends": {
+        "yearlyDistribution": {},
+        "growthRate": "N/A"
+      }
+    },
+    "HEALTHCARE": {
+      "field": "Healthcare Law",
+      "totalCases": 0,
+      "sources": {
+        "courtListener": 0,
+        "googleScholar": 0,
+        "justia": 0
+      },
+      "dateRange": {
+        "earliest": "N/A",
+        "latest": "N/A"
+      },
+      "topCourts": [],
+      "topJurisdictions": [],
+      "keywordFrequency": [
+        {
+          "keyword": "medical",
+          "frequency": 2
+        },
+        {
+          "keyword": "healthcare",
+          "frequency": 2
+        },
+        {
+          "keyword": "regulation",
+          "frequency": 2
+        },
+        {
+          "keyword": "HIPAA",
+          "frequency": 1
+        },
+        {
+          "keyword": "privacy",
+          "frequency": 1
+        },
+        {
+          "keyword": "violation",
+          "frequency": 1
+        },
+        {
+          "keyword": "medicare",
+          "frequency": 1
+        },
+        {
+          "keyword": "fraud",
+          "frequency": 1
+        },
+        {
+          "keyword": "abuse",
+          "frequency": 1
+        },
+        {
+          "keyword": "licensing",
+          "frequency": 1
+        },
+        {
+          "keyword": "stark",
+          "frequency": 1
+        },
+        {
+          "keyword": "anti-kickback",
+          "frequency": 1
+        },
+        {
+          "keyword": "compliance",
+          "frequency": 1
+        },
+        {
+          "keyword": "hospital",
+          "frequency": 1
+        },
+        {
+          "keyword": "credentialing",
+          "frequency": 1
+        }
+      ],
+      "avgBillingRate": 450,
+      "estimatedMarketSize": 22000000000,
+      "trends": {
+        "yearlyDistribution": {},
+        "growthRate": "N/A"
+      }
+    },
+    "BANKRUPTCY": {
+      "field": "Bankruptcy Law",
+      "totalCases": 0,
+      "sources": {
+        "courtListener": 0,
+        "googleScholar": 0,
+        "justia": 0
+      },
+      "dateRange": {
+        "earliest": "N/A",
+        "latest": "N/A"
+      },
+      "topCourts": [],
+      "topJurisdictions": [],
+      "keywordFrequency": [
+        {
+          "keyword": "bankruptcy",
+          "frequency": 3
+        },
+        {
+          "keyword": "chapter",
+          "frequency": 2
+        },
+        {
+          "keyword": "reorganization",
+          "frequency": 1
+        },
+        {
+          "keyword": "automatic",
+          "frequency": 1
+        },
+        {
+          "keyword": "stay",
+          "frequency": 1
+        },
+        {
+          "keyword": "violation",
+          "frequency": 1
+        },
+        {
+          "keyword": "preferential",
+          "frequency": 1
+        },
+        {
+          "keyword": "transfer",
+          "frequency": 1
+        },
+        {
+          "keyword": "fraudulent",
+          "frequency": 1
+        },
+        {
+          "keyword": "conveyance",
+          "frequency": 1
+        },
+        {
+          "keyword": "discharge",
+          "frequency": 1
+        },
+        {
+          "keyword": "debt",
+          "frequency": 1
+        },
+        {
+          "keyword": "trustee",
+          "frequency": 1
+        },
+        {
+          "keyword": "creditor",
+          "frequency": 1
+        },
+        {
+          "keyword": "committee",
+          "frequency": 1
+        }
+      ],
+      "avgBillingRate": 350,
+      "estimatedMarketSize": 15000000000,
+      "trends": {
+        "yearlyDistribution": {},
+        "growthRate": "N/A"
+      }
+    }
+  },
+  "industryOverview": {
+    "totalMarketSize": 342000000000,
+    "totalLawyers": 1330000,
+    "totalLawFirms": 449633,
+    "averageRevenue": 760620.3281342784
+  },
+  "financialBreakdown": {
+    "byField": [
+      {
+        "field": "Corporate Law",
+        "marketSize": 67000000000,
+        "percentage": 19.5906432748538,
+        "avgBillingRate": 650,
+        "estimatedHoursPerYear": 103076923
+      },
+      {
+        "field": "Civil Litigation",
+        "marketSize": 45000000000,
+        "percentage": 13.157894736842104,
+        "avgBillingRate": 350,
+        "estimatedHoursPerYear": 128571429
+      },
+      {
+        "field": "Intellectual Property",
+        "marketSize": 38000000000,
+        "percentage": 11.11111111111111,
+        "avgBillingRate": 550,
+        "estimatedHoursPerYear": 69090909
+      },
+      {
+        "field": "Employment & Labor Law",
+        "marketSize": 31000000000,
+        "percentage": 9.064327485380117,
+        "avgBillingRate": 325,
+        "estimatedHoursPerYear": 95384615
+      },
+      {
+        "field": "Tax Law",
+        "marketSize": 29000000000,
+        "percentage": 8.47953216374269,
+        "avgBillingRate": 475,
+        "estimatedHoursPerYear": 61052632
+      },
+      {
+        "field": "Criminal Law",
+        "marketSize": 28000000000,
+        "percentage": 8.187134502923977,
+        "avgBillingRate": 250,
+        "estimatedHoursPerYear": 112000000
+      },
+      {
+        "field": "Real Estate Law",
+        "marketSize": 24000000000,
+        "percentage": 7.017543859649122,
+        "avgBillingRate": 325,
+        "estimatedHoursPerYear": 73846154
+      },
+      {
+        "field": "Healthcare Law",
+        "marketSize": 22000000000,
+        "percentage": 6.432748538011696,
+        "avgBillingRate": 450,
+        "estimatedHoursPerYear": 48888889
+      },
+      {
+        "field": "Family Law",
+        "marketSize": 19000000000,
+        "percentage": 5.555555555555555,
+        "avgBillingRate": 275,
+        "estimatedHoursPerYear": 69090909
+      },
+      {
+        "field": "Environmental Law",
+        "marketSize": 16000000000,
+        "percentage": 4.678362573099415,
+        "avgBillingRate": 425,
+        "estimatedHoursPerYear": 37647059
+      },
+      {
+        "field": "Bankruptcy Law",
+        "marketSize": 15000000000,
+        "percentage": 4.385964912280701,
+        "avgBillingRate": 350,
+        "estimatedHoursPerYear": 42857143
+      },
+      {
+        "field": "Immigration Law",
+        "marketSize": 8000000000,
+        "percentage": 2.3391812865497075,
+        "avgBillingRate": 225,
+        "estimatedHoursPerYear": 35555556
+      }
+    ],
+    "totalRevenue": 342000000000
+  },
+  "balanceSheet": {
+    "assets": {
+      "cashEquivalents": 51300000000,
+      "accountsReceivable": 61560000000,
+      "workInProgress": 41040000000,
+      "fixedAssets": 85500000000,
+      "totalAssets": 239400000000
+    },
+    "liabilities": {
+      "accountsPayable": 27360000000,
+      "deferredRevenue": 17100000000,
+      "longTermDebt": 41040000000,
+      "totalLiabilities": 85500000000
+    },
+    "equity": {
+      "retainedEarnings": 75240000000,
+      "partnerCapital": 78660000000,
+      "totalEquity": 153900000000
+    }
+  },
+  "trends": {
+    "emergingAreas": [
+      "Data not sufficient for trend analysis"
+    ],
+    "decliningAreas": [
+      "Data not sufficient for trend analysis"
+    ],
+    "hotTopics": [
+      {
+        "topic": "criminal",
+        "mentions": 4
+      },
+      {
+        "topic": "corporate",
+        "mentions": 4
+      },
+      {
+        "topic": "regulation",
+        "mentions": 4
+      },
+      {
+        "topic": "patent",
+        "mentions": 4
+      },
+      {
+        "topic": "medical",
+        "mentions": 3
+      },
+      {
+        "topic": "violation",
+        "mentions": 3
+      },
+      {
+        "topic": "immigration",
+        "mentions": 3
+      },
+      {
+        "topic": "bankruptcy",
+        "mentions": 3
+      },
+      {
+        "topic": "rights",
+        "mentions": 2
+      },
+      {
+        "topic": "judgment",
+        "mentions": 2
+      },
+      {
+        "topic": "securities",
+        "mentions": 2
+      },
+      {
+        "topic": "business",
+        "mentions": 2
+      },
+      {
+        "topic": "trademark",
+        "mentions": 2
+      },
+      {
+        "topic": "employment",
+        "mentions": 2
+      },
+      {
+        "topic": "termination",
+        "mentions": 2
+      },
+      {
+        "topic": "child",
+        "mentions": 2
+      },
+      {
+        "topic": "property",
+        "mentions": 2
+      },
+      {
+        "topic": "support",
+        "mentions": 2
+      },
+      {
+        "topic": "fraud",
+        "mentions": 2
+      },
+      {
+        "topic": "estate",
+        "mentions": 2
+      }
+    ]
+  }
+}

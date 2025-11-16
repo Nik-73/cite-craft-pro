@@ -12,7 +12,9 @@
     "scraper": "tsx src/scraper/cli/index.ts",
     "scraper:search": "npm run scraper search",
     "scraper:sources": "npm run scraper sources",
-    "scraper:examples": "npm run scraper examples"
+    "scraper:examples": "npm run scraper examples",
+    "analyze": "tsx src/analysis/runComprehensiveAnalysis.ts",
+    "analyze:comprehensive": "tsx src/analysis/runComprehensiveAnalysis.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.69.0",
