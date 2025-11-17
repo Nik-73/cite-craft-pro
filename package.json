@@ -12,7 +12,12 @@
     "scraper": "tsx src/scraper/cli/index.ts",
     "scraper:search": "npm run scraper search",
     "scraper:sources": "npm run scraper sources",
-    "scraper:examples": "npm run scraper examples"
+    "scraper:examples": "npm run scraper examples",
+    "research": "tsx src/scraper/cli/indian-research.ts",
+    "research:collect": "npm run research collect",
+    "research:list": "npm run research list",
+    "research:stats": "npm run research stats",
+    "research:export": "npm run research export"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.69.0",
