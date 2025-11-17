@@ -12,7 +12,9 @@
     "scraper": "tsx src/scraper/cli/index.ts",
     "scraper:search": "npm run scraper search",
     "scraper:sources": "npm run scraper sources",
-    "scraper:examples": "npm run scraper examples"
+    "scraper:examples": "npm run scraper examples",
+    "analyze-sequences": "tsx scripts/analyze-sequences.ts",
+    "generate-index": "tsx scripts/generate-sequences-index.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.69.0",
@@ -51,6 +53,7 @@
     "cmdk": "^1.1.1",
     "commander": "^14.0.2",
     "date-fns": "^3.6.0",
+    "dotenv": "^17.2.3",
     "embla-carousel-react": "^8.6.0",
     "input-otp": "^1.4.2",
     "lucide-react": "^0.462.0",
