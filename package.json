@@ -12,7 +12,11 @@
     "scraper": "tsx src/scraper/cli/index.ts",
     "scraper:search": "npm run scraper search",
     "scraper:sources": "npm run scraper sources",
-    "scraper:examples": "npm run scraper examples"
+    "scraper:examples": "npm run scraper examples",
+    "format-article": "tsx src/cli/format-legal-article.ts",
+    "check-article": "tsx src/cli/format-legal-article.ts -f analysis",
+    "article:latex": "tsx src/cli/format-legal-article.ts -f latex --fix",
+    "article:word": "tsx src/cli/format-legal-article.ts -f word --fix"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.69.0",
