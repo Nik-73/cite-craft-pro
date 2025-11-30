@@ -12,10 +12,6 @@ dist
 dist-ssr
 *.local
 
-# Scraper results
-scraper-results/
-*.scraper-*.json
-
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -26,3 +22,27 @@ scraper-results/
 *.njsproj
 *.sln
 *.sw?
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Build outputs
+build
+out
+
+# Cache
+.cache
+.parcel-cache
+.next
+.nuxt
+
+# Testing
+coverage
+.nyc_output
+
+# Misc
+*.pem
+.vercel
+.netlify
